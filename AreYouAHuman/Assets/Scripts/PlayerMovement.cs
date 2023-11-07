@@ -7,7 +7,7 @@ public class PlayerMovement : MonoBehaviour
     //VARIABLES//
     private float movement;
     private float speed = 5f;
-    private float jumpPower = 15f;
+    private float jumpPower = 30f;
     private bool IsFacingRight = true;
 
     //REFERENCES//
@@ -33,6 +33,36 @@ public class PlayerMovement : MonoBehaviour
         rb2d = GetComponent<Rigidbody2D>(); //Searches all Components of Player for Rigidbody2D component, if it has one
         // sprite = GetComponent<SpriteRenderer>(); 
     }
+ 
+    // Update is called once per frame
+    void Update()
+    {
+       movement = Input.GetAxisRaw("Horizontal");
+
+       //Jump the player if space is pressed and if being grounded 
+       if(Input.GetKeyDown(KeyCode.Space) && isGrounded())
+       {
+            rb2d.velocity = new Vector2(rb2d.velocity.x, jumpPower);
+       }
+
+       if(Input.GetKeyUp(KeyCode.Space) && rb2d.velocity.y > 0f)
+       {
+            rb2d.velocity = new Vector2(rb2d.velocity.x, rb2d.velocity.y * 0.5f);
+                                // rb2d.velocity += Vector2.down * Physics2D.gravity.y * Time.deltaTime;
+       }
+       Flip();
+    }
+
+   void FixedUpdate()
+    {
+         rb2d.velocity = new Vector2(movement * speed, rb2d.velocity.y);
+    }
+    //Check if the player is grounded 
+    //Return true if the player is on the ground layer
+    private bool isGrounded()
+    {
+        return Physics2D.OverlapCircle(groundCheck.position, 0.2f, groundLayer);
+    }
 
     //If the player is facing to the right or left and are moving 
     //Flip them in the opposite direction 
@@ -46,42 +76,5 @@ public class PlayerMovement : MonoBehaviour
             transform.localScale = localScale;
         }
     }
-    void FixedUpdate()
-    {
-        rb2d.velocity = new Vector2(movement * speed, rb2d.velocity.y);
-    }
-    // Update is called once per frame
-    void Update()
-    {
-       movement = Input.GetAxis("Horizontal");
-
-       //Jump the player if space is pressed and if being grounded 
-       if(Input.GetKeyDown(KeyCode.Space) && isGrounded())
-       {
-            rb2d.velocity = new Vector2(rb2d.velocity.x, jumpPower);
-       }
-
-       if(Input.GetKeyUp(KeyCode.Space) && rb2d.velocity.y > 0f)
-       {
-            rb2d.velocity = new Vector2(rb2d.velocity.x, rb2d.velocity.y * 0.5f);
-       }
-       Flip();
-    }
-
-    //Check if the player is grounded 
-    //Return true if the player is on the ground layer
-    private bool isGrounded()
-    {
-        return Physics2D.OverlapCircle(groundCheck.position, 0.2f, groundLayer);
-    }
-    // void Move()
-    // {
-    //     acceleration = moveX;
-    //     if(Mathf.Abs(rb2d.velocity.x) >= speed)
-    //     {
-    //         rb2d.velocity = new Vector2(rb2d.velocity.normalized.x * speed, rb2d.velocity.y);
-    //     }
-    //     rb2d.AddForce(acceleration * Vector2.right);
-    // }
 
 }
