@@ -11,6 +11,7 @@ public class GameManager : MonoBehaviour
     private float seconds; 
     public TextMeshProUGUI interactText; //text that appears on screen whenever players can pickup an object
     public List<GameObject> playerInventory = new List<GameObject>();
+    public TextMeshProUGUI currentStateText;
     //REFERENCES//
     public TextMeshProUGUI timerText; //References the timer text to display how much time is left 
     // Start is called before the first frame update
@@ -24,6 +25,7 @@ public class GameManager : MonoBehaviour
         StopAllCoroutines();
         StartCoroutine(GameTimer());
         interactText.text = "";
+        currentStateText.text = "";
     }
 
     // Update is called once per frame
@@ -40,12 +42,13 @@ public class GameManager : MonoBehaviour
         for(int i = timer; i > 0; i--)
         {
             yield return new WaitForSeconds(1f);
-            Debug.Log(i);
+            // Debug.Log(i);
             timer--;
             minutes = Mathf.Floor(timer / 60);
             seconds =  timer - minutes * 60;
             timerText.text = minutes.ToString() + ":" + seconds.ToString();
         }
         Debug.Log("Call CheckPose() method.");
+        currentStateText.text = "TIME'S UP!";
     }
 }
