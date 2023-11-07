@@ -580,6 +580,8 @@ MonoBehaviour:
   playerInventory: []
   currentStateText: {fileID: 225871532}
   timerText: {fileID: 1802181843}
+  posePanel: {fileID: 558300852}
+  player: {fileID: 1646973862}
 --- !u!4 &293140921
 Transform:
   m_ObjectHideFlags: 0
