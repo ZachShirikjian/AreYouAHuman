@@ -23,25 +23,10 @@ public class PlayerInteract : MonoBehaviour
         if(Input.GetKey(KeyCode.E) && canInteract == true)
         {
             gm.playerInventory.Add(selectedObject);
+            Debug.Log(selectedObject.GetComponent<InventoryItem>().defaultSprite);
+            // selectedObject.GetComponent<InventoryItem>().currentSprite.sprite = selectedObject.GetComponent<InventoryItem>().collectedSprite;
             selectedObject.SetActive(false);
         }
     }
 
-    public void OnTriggerEnter2D(Collider2D other)
-    {
-        if(other.gameObject.tag == "Prop")
-        {
-            Debug.Log("CAN PICKUP PROP");
-            gm.interactText.text = "[E] Pick up";
-            canInteract = true;
-            selectedObject = other.gameObject;
-        }
-    }
-
-    public void OnTriggerExit2D(Collider2D other)
-    {
-        gm.interactText.text = "";
-        canInteract = false;
-        selectedObject = null;
-    }
 }
