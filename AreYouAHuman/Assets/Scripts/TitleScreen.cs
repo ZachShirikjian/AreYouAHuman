@@ -38,6 +38,11 @@ public class TitleScreen : MonoBehaviour
     //Exits out of the game (only works in Builds)
     public void QuitGame()
     {
+        //Quits out of Play Mode if the Quit button is pressed 
+        #if UNITY_EDITOR 
+        UnityEditor.EditorApplication.isPlaying = false;
+
+        #endif
         Application.Quit();
     }
 }
