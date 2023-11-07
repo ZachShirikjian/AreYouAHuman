@@ -9,6 +9,8 @@ public class GameManager : MonoBehaviour
     public int timer = 90;    //The # of time (in seconds) a level is.
     private float minutes;
     private float seconds; 
+    public TextMeshProUGUI interactText; //text that appears on screen whenever players can pickup an object
+    public List<GameObject> playerInventory = new List<GameObject>();
     //REFERENCES//
     public TextMeshProUGUI timerText; //References the timer text to display how much time is left 
     // Start is called before the first frame update
@@ -19,7 +21,9 @@ public class GameManager : MonoBehaviour
         minutes = Mathf.Floor(timer / 60);
         seconds =  timer - minutes * 60;
         timerText.text = minutes.ToString() + ":" + seconds.ToString();
+        StopAllCoroutines();
         StartCoroutine(GameTimer());
+        interactText.text = "";
     }
 
     // Update is called once per frame
