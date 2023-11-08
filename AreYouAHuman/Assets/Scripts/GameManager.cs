@@ -20,6 +20,10 @@ public class GameManager : MonoBehaviour
     private GameObject player; //Reference to Player GameObject
     public GameObject inventory; //Reference to Player's Inventory, which doesn't get shown at PoseCheck screen
 
+    //PAUSE MENU//
+    private bool paused = false;
+    public GameObject pauseMenu; //Reference to Pause Menu for pausing the game 
+
     //POSE CHECK//
     public GameObject posePanel; //Reference to the Pose Panel that appears at the end of the level 
     public Image playerPose;
@@ -35,8 +39,9 @@ public class GameManager : MonoBehaviour
     //Make sure to initialize (reset) variables EVERY TIME a scene is loaded.
     void Start()
     {
+        paused = false;
         itemsCollected = 0;
-        timer = 10;
+        timer = 90;
         minutes = Mathf.Floor(timer / 60);
         seconds =  timer - minutes * 60;
         timerText.text = minutes.ToString() + ":" + seconds.ToString();
@@ -50,14 +55,32 @@ public class GameManager : MonoBehaviour
         boxIcon.sprite = null;
         inventory.SetActive(true);
         continueButton.SetActive(false);
+        pauseMenu.SetActive(false);
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if(Input.GetKeyDown(KeyCode.P) && !paused)
+        {
+            PauseGame();
+        }
     }
 
+    //PAUSE MENU//
+    public void PauseGame()
+    {
+        pauseMenu.SetActive(true);
+        Time.timeScale = 0f;
+        paused = true;
+    }
+
+    public void UnpauseGame()
+    {
+        pauseMenu.SetActive(false);
+        Time.timeScale = 1f;
+        paused = false;
+    }
     //The timer used for each level in the game, starting at 90 seconds.
     //When the timer hits 0, call the CheckPose() method to see if the player
     //Got every correct item in the level.
