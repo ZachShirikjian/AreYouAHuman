@@ -12,7 +12,7 @@ public class InventoryUI : MonoBehaviour
     private GameManager gm;
     public GameObject slotList;
     public InventorySlot[] slots;
-    public InventoryItem[] inventoryItems;
+    public List<InventoryItem> inventoryItems = new List<InventoryItem>();
     // public InventorySlot[] InventorySlots = new InventorySlot[3];
 
     //At the start of the level, clear all of the Inventory Slots
