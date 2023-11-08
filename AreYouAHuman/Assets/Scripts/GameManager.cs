@@ -10,7 +10,8 @@ public class GameManager : MonoBehaviour
     private float minutes;
     private float seconds; 
     public TextMeshProUGUI interactText; //text that appears on screen whenever players can pickup an object
-    public List<GameObject> playerInventory = new List<GameObject>();
+    public List<GameObject> playerInventory = new List<GameObject>(); //INGAME player inventory
+    // public InventoryItem[] iventoryItems = new InventoryItem[3]; //UI player inventory
     public TextMeshProUGUI currentStateText;
     
     //REFERENCES//
