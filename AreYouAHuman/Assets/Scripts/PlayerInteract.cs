@@ -29,6 +29,7 @@ public class PlayerInteract : MonoBehaviour
             selectedObject.SetActive(false);
             Debug.Log("PICKEDUP PROP");
             inventoryUI.UpdateUI();
+            gm.itemsCollected++;
         }
     }
 

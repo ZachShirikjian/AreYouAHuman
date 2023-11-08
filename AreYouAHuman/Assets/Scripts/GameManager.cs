@@ -17,15 +17,25 @@ public class GameManager : MonoBehaviour
     
     //REFERENCES//
     public TextMeshProUGUI timerText; //References the timer text to display how much time is left 
+    private GameObject player; //Reference to Player GameObject
+    public GameObject inventory; //Reference to Player's Inventory, which doesn't get shown at PoseCheck screen
+
+    //POSE CHECK//
     public GameObject posePanel; //Reference to the Pose Panel that appears at the end of the level 
     public Image playerPose;
-    public List<Sprite> poseImages = new List<Sprite>();
-    public PlayerMovement player; //Reference to PlayerMovement script in the Player GameObject
+    public Sprite[] poseImages = new Sprite[8];
+    public Image boxIcon; //displays checkmark or X if captcha is correct or not
+    public Sprite checkmark; //checkmark if player passed captcha
+    public Sprite xMark; //X symbol if player failed captcha
+
+    public int itemsCollected = 0; 
+
     // Start is called before the first frame update
     //Make sure to initialize (reset) variables EVERY TIME a scene is loaded.
     void Start()
     {
-        timer = 60;
+        itemsCollected = 0;
+        timer = 10;
         minutes = Mathf.Floor(timer / 60);
         seconds =  timer - minutes * 60;
         timerText.text = minutes.ToString() + ":" + seconds.ToString();
@@ -34,7 +44,10 @@ public class GameManager : MonoBehaviour
         interactText.text = "";
         currentStateText.text = "";
         posePanel.SetActive(false);
-        player.enabled = true;
+        player = GameObject.Find("Zort");
+        player.SetActive(true);
+        boxIcon.sprite = null;
+        inventory.SetActive(true);
     }
 
     // Update is called once per frame
@@ -65,9 +78,46 @@ public class GameManager : MonoBehaviour
             }
         }
         Debug.Log("Call CheckPose() method.");
-        player.enabled = false;
+        player.SetActive(false);
         currentStateText.text = "TIME'S UP!";
         yield return new WaitForSeconds(3f);
-        posePanel.SetActive(true);
+        ComparePose();
+    }
+
+    public void ComparePose()
+    {
+        inventory.SetActive(false);
+         posePanel.SetActive(true);
+         switch(itemsCollected)
+         {
+             case 1:
+                 playerPose.sprite = poseImages[4];
+                 boxIcon.sprite = xMark;
+                 break;
+             case 2:
+                 playerPose.sprite = poseImages[2];
+                 boxIcon.sprite = xMark;
+                 break;
+             case 3:
+                 playerPose.sprite = poseImages[0];
+                 boxIcon.sprite = checkmark;
+                 break;
+            //  case 4: 
+            //      playerPose.sprite = poseImages[3];
+            //      boxIcon.sprite = xMark;
+            //  case 5: 
+            //      playerPose.sprite = poseImages[4];
+            //      boxIcon.sprite = xMark;
+            //  case 6: 
+            //      playerPose.sprite = poseImages[5];
+            //      boxIcon.sprite = xMark;
+            //  case 7: 
+            //      playerPose.sprite = poseImages[6];
+            //      boxIcon.sprite = xMark;
+         default:
+             playerPose.sprite = poseImages[7];
+             boxIcon.sprite = xMark;
+             break;
+         }
     }
 }
