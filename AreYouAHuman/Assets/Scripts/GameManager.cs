@@ -27,7 +27,8 @@ public class GameManager : MonoBehaviour
     public Image boxIcon; //displays checkmark or X if captcha is correct or not
     public Sprite checkmark; //checkmark if player passed captcha
     public Sprite xMark; //X symbol if player failed captcha
-
+    
+    public GameObject continueButton; //reference to continue button, which is only active when the player correctly got the pose right 
     public int itemsCollected = 0; 
 
     // Start is called before the first frame update
@@ -48,6 +49,7 @@ public class GameManager : MonoBehaviour
         player.SetActive(true);
         boxIcon.sprite = null;
         inventory.SetActive(true);
+        continueButton.SetActive(false);
     }
 
     // Update is called once per frame
@@ -101,6 +103,7 @@ public class GameManager : MonoBehaviour
              case 3:
                  playerPose.sprite = poseImages[0];
                  boxIcon.sprite = checkmark;
+                 continueButton.SetActive(true);
                  break;
             //  case 4: 
             //      playerPose.sprite = poseImages[3];
