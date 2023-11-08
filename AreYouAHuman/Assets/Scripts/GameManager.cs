@@ -11,12 +11,15 @@ public class GameManager : MonoBehaviour
     private float seconds; 
     public TextMeshProUGUI interactText; //text that appears on screen whenever players can pickup an object
     public List<GameObject> playerInventory = new List<GameObject>(); //INGAME player inventory
+
     // public InventoryItem[] iventoryItems = new InventoryItem[3]; //UI player inventory
     public TextMeshProUGUI currentStateText;
     
     //REFERENCES//
     public TextMeshProUGUI timerText; //References the timer text to display how much time is left 
     public GameObject posePanel; //Reference to the Pose Panel that appears at the end of the level 
+    public Image playerPose;
+    public List<Sprite> poseImages = new List<Sprite>();
     public PlayerMovement player; //Reference to PlayerMovement script in the Player GameObject
     // Start is called before the first frame update
     //Make sure to initialize (reset) variables EVERY TIME a scene is loaded.
