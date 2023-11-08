@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-//Script taken from INVENTORY CODE - Making an RPG in Unity (Ep 6) by Brackeys
+//Script partially taken from INVENTORY CODE - Making an RPG in Unity (Ep 6) by Brackeys
 //https://www.youtube.com/watch?v=YLhj7SfaxSE//
 public class InventoryUI : MonoBehaviour
 {
@@ -12,14 +12,17 @@ public class InventoryUI : MonoBehaviour
     private GameManager gm;
     public GameObject slotList;
     public InventorySlot[] slots;
+    public InventoryItem[] inventoryItems;
     // public InventorySlot[] InventorySlots = new InventorySlot[3];
+
+    //At the start of the level, clear all of the Inventory Slots
     void Start()
     {
         gm = GameObject.Find("GameManager").GetComponent<GameManager>();
         slots = slotList.GetComponentsInChildren<InventorySlot>();
         for(int i = 0; i < slots.Length; i++)
         {
-            Debug.Log("CLEARED SLOT");
+            Debug.Log("CLEARED ALL SLOTS");
             slots[i].ClearSlot();
         }
     }
@@ -30,27 +33,23 @@ public class InventoryUI : MonoBehaviour
         {
             if(i < gm.playerInventory.Count)
             {
-                Debug.Log("ADDED ITEM");
+                // if(inventoryItems[i].alreadyAdded == true)
+                // {
+                //     Debug.Log("CAN'T ADD RIP");
+                // }
+                if(inventoryItems[i].alreadyAdded == false)
+                {
+                    Debug.Log("ADDED ITEM");
+                    slots[i].AddItem(inventoryItems[i]);
+                    inventoryItems[i].alreadyAdded = true;
+                }
                 // slots[i].AddItem(gm.inventoryItems[i]);
             }
-            else 
-            {
-                slots[i].ClearSlot();
-            }
-            Debug.Log("CLEARED SLOT");
-            slots[i].ClearSlot();
+            // else 
+            // {
+            //      slots[i].ClearSlot();
+            // }
+
         }
-        // InventorySlots = GetComponentsInChildren<InventorySlot>();
-        // for(int i = 0; i < slots.Length; i++)
-        // {
-        //     if(i < gm.playerInventory.Count)
-        //     {
-        //         slots[i].AddItem(gm.playerInventory[i]);
-        //     }
-        //     else
-        //     {
-        //         slots[i].ClearSlot();
-        //     }
-        // }
     }
 }

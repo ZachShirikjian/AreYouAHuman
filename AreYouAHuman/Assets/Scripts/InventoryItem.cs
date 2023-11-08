@@ -14,6 +14,7 @@ public class InventoryItem : MonoBehaviour
     public Sprite defaultSprite;
     // public Sprite collectedSprite; 
     public Image icon; 
+    public bool alreadyAdded =false;
     // Start is called before the first frame update
     void Start()
     {

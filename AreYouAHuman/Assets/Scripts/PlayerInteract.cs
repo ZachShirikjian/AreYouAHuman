@@ -37,10 +37,19 @@ public class PlayerInteract : MonoBehaviour
     {
         if(other.gameObject.tag == "Prop")
         {
-            Debug.Log("CAN PICKUP PROP");
-            gm.interactText.text = "[E] Pick up";
-            canInteract = true;
-            selectedObject = other.gameObject;
+            if(gm.playerInventory.Count < 3)
+            {
+                Debug.Log("CAN PICKUP PROP");
+                gm.interactText.text = "[E] Pick up";
+                canInteract = true;
+                selectedObject = other.gameObject;
+            }
+            else if(gm.playerInventory.Count >= 3)
+            {
+                Debug.Log("CAN'T PICKUP PROP");
+                gm.interactText.text = "Inventory is Full";
+            }
+
         }
     }
 

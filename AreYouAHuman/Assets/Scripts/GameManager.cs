@@ -22,7 +22,7 @@ public class GameManager : MonoBehaviour
     //Make sure to initialize (reset) variables EVERY TIME a scene is loaded.
     void Start()
     {
-        timer = 10;
+        timer = 60;
         minutes = Mathf.Floor(timer / 60);
         seconds =  timer - minutes * 60;
         timerText.text = minutes.ToString() + ":" + seconds.ToString();
