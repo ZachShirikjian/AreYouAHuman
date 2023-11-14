@@ -52,4 +52,10 @@ public class InventoryUI : MonoBehaviour
 
         }
     }
+
+    //
+    public void RemoveItem()
+    {
+        
+    }
 }
