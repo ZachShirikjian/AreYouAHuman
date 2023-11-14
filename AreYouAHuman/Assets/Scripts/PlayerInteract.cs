@@ -24,12 +24,12 @@ public class PlayerInteract : MonoBehaviour
         if(Input.GetKey(KeyCode.E) && canInteract == true)
         {
             gm.playerInventory.Add(selectedObject);
-            // Debug.Log(selectedObject.GetComponent<InventoryItem>().defaultSprite);
             // selectedObject.GetComponent<InventoryItem>().currentSprite.sprite = selectedObject.GetComponent<InventoryItem>().collectedSprite;
-            selectedObject.SetActive(false);
             Debug.Log("PICKEDUP PROP");
+            inventoryUI.inventoryItems.Add(selectedObject.GetComponent<InventoryItem>());
             inventoryUI.UpdateUI();
             gm.itemsCollected++;
+                        selectedObject.SetActive(false);
         }
     }
 

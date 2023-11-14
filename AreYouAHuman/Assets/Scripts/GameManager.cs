@@ -10,7 +10,7 @@ public class GameManager : MonoBehaviour
     private float minutes;
     private float seconds; 
     public TextMeshProUGUI interactText; //text that appears on screen whenever players can pickup an object
-    public List<GameObject> playerInventory = new List<GameObject>(); //INGAME player inventory
+    public List<GameObject> playerInventory = new List<GameObject>(); //INGAME player inventory which holds items in player inventory
 
     // public InventoryItem[] iventoryItems = new InventoryItem[3]; //UI player inventory
     public TextMeshProUGUI currentStateText;
@@ -18,7 +18,7 @@ public class GameManager : MonoBehaviour
     //REFERENCES//
     public TextMeshProUGUI timerText; //References the timer text to display how much time is left 
     private GameObject player; //Reference to Player GameObject
-    public GameObject inventory; //Reference to Player's Inventory, which doesn't get shown at PoseCheck screen
+    public GameObject inventory; //Reference to Player's Inventory UI, which doesn't get shown at PoseCheck screen
 
     //PAUSE MENU//
     private bool paused = false;
