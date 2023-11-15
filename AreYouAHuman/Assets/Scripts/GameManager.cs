@@ -7,6 +7,7 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     //VARIABLES//
+    public bool timerRunning = true; //set to false if player submits their props before timer runs out
     public int timer = 10;    //The # of time (in seconds) a level is.
     private float minutes;
     private float seconds; 
@@ -33,6 +34,7 @@ public class GameManager : MonoBehaviour
     public Image boxIcon; //displays checkmark or X if captcha is correct or not
     public Sprite checkmark; //checkmark if player passed captcha
     public Sprite xMark; //X symbol if player failed captcha
+    public GameObject submitButton;
     
     public GameObject continueButton; //reference to continue button, which is only active when the player correctly got the pose right 
     public int itemsCollected = 0; 
@@ -47,6 +49,7 @@ public class GameManager : MonoBehaviour
     //Make sure to initialize (reset) variables EVERY TIME a scene is loaded.
     void Start()
     {
+        submitButton.SetActive(true);
         paused = false;
         itemsCollected = 0;
         timer = 90;
@@ -99,6 +102,18 @@ public class GameManager : MonoBehaviour
         Time.timeScale = 1f;
         paused = false;
     }
+
+    //Stops timer if time runs out OR if players feel ready to compare the Pose
+    public void StopTimer()
+    {
+        submitButton.SetActive(false);
+        timerRunning = false;
+        Debug.Log("Call CheckPose() method.");
+        player.SetActive(false);
+        currentStateText.text = "TIME'S UP!";
+        Invoke("ComparePose", 3.0f);
+    }
+
     //The timer used for each level in the game, starting at 90 seconds.
     //When the timer hits 0, call the CheckPose() method to see if the player
     //Got every correct item in the level.
@@ -106,25 +121,30 @@ public class GameManager : MonoBehaviour
     {
         for(int i = timer; i > 0; i--)
         {
-            yield return new WaitForSeconds(1f);
-            // Debug.Log(i);
-            timer--;
-            minutes = Mathf.Floor(timer / 60);
-            seconds =  timer - minutes * 60;
-            if(seconds >= 10)
+            if(timerRunning == true)
             {
-                timerText.text = minutes.ToString() + ":" + seconds.ToString();
+                yield return new WaitForSeconds(1f);
+                // Debug.Log(i);
+                timer--;
+                minutes = Mathf.Floor(timer / 60);
+                seconds =  timer - minutes * 60;
+                if(seconds >= 10)
+                {
+                    timerText.text = minutes.ToString() + ":" + seconds.ToString();
+                }
+                if(seconds < 10)
+                {
+                    timerText.text = minutes.ToString() + ":0" + seconds.ToString();
+                }
             }
-            if(seconds < 10)
+            if(timerRunning == false)
             {
-                timerText.text = minutes.ToString() + ":0" + seconds.ToString();
+                break;
             }
+
         }
-        Debug.Log("Call CheckPose() method.");
-        player.SetActive(false);
-        currentStateText.text = "TIME'S UP!";
-        yield return new WaitForSeconds(3f);
-        ComparePose();
+        StopTimer();
+
     }
 
     public void ComparePose()

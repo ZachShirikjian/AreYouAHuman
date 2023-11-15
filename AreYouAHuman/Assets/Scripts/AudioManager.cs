@@ -8,6 +8,8 @@ public class AudioManager : MonoBehaviour
     public AudioClip jump;
     public AudioClip collectItem;
     public AudioClip dropItem; 
+    public AudioClip uiHover;
+    public AudioClip uiClick;
     // Start is called before the first frame update
     void Start()
     {
