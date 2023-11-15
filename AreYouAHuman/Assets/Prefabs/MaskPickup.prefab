@@ -171,6 +171,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 25580a82c33154adb921f775810532ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  defaultSprite: {fileID: 21300000, guid: 1607dbf0bbed74953b07522b2e88e6f1, type: 3}
+  defaultSprite: {fileID: 21300000, guid: 0ad4587e446b54a9c999503983c991ba, type: 3}
   icon: {fileID: 0}
   alreadyAdded: 0

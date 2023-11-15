@@ -8,7 +8,7 @@ public class GameManager : MonoBehaviour
 {
     //VARIABLES//
     public bool timerRunning = true; //set to false if player submits their props before timer runs out
-    public int timer = 10;    //The # of time (in seconds) a level is.
+    public int timer = 60;    //The # of time (in seconds) a level is.
     private float minutes;
     private float seconds; 
     public GameObject interactPrompt;
@@ -49,13 +49,14 @@ public class GameManager : MonoBehaviour
     //Make sure to initialize (reset) variables EVERY TIME a scene is loaded.
     void Start()
     {
-        submitButton.SetActive(true);
+        timerRunning = true;
+        submitButton.SetActive(false);
         paused = false;
         itemsCollected = 0;
-        timer = 90;
+        // timer = 60;
         minutes = Mathf.Floor(timer / 60);
-        seconds =  timer - minutes * 60;
-        timerText.text = minutes.ToString() + ":" + seconds.ToString();
+        seconds = timer - minutes * 60;
+        timerText.text = minutes.ToString() + ":0" + seconds.ToString();
         StopAllCoroutines();
         StartCoroutine(GameTimer());
         interactText.text = "";
@@ -110,7 +111,7 @@ public class GameManager : MonoBehaviour
         timerRunning = false;
         Debug.Log("Call CheckPose() method.");
         player.SetActive(false);
-        currentStateText.text = "TIME'S UP!";
+        currentStateText.text = "FINISH!";
         Invoke("ComparePose", 3.0f);
     }
 

@@ -38,6 +38,10 @@ public class InventoryUI : MonoBehaviour
             inventoryItems[i].alreadyAdded = true;
             sfxSource.PlayOneShot(audioManager.collectItem);
         }
+        if(gm.playerInventory.Count == gm.maxInventoryItems)
+        {
+            gm.submitButton.SetActive(true);
+        }
         // if(currentSlot < 3)
         // {
         //     Debug.Log("WORKS");
@@ -76,8 +80,12 @@ public class InventoryUI : MonoBehaviour
         // inventoryItems[i].alreadyAdded = false;
         inventoryItems.Remove(item);
         sfxSource.PlayOneShot(audioManager.dropItem);
- //       gm.playerInventory.pop()
-        // Instantiate(,player.transform.position, Quaternion.rotation);
+        if(gm.playerInventory.Count > 0)
+        {
+            Debug.Log("REMOVAL SUCCESSFUL");
+            Instantiate(item.gameObject,player.transform.position, Quaternion.identity);
+            gm.playerInventory.Remove(item.gameObject);
+        }
 
 
         //Places the original item back into the scene 
