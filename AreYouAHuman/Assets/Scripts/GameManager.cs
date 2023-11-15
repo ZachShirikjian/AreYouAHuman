@@ -3,12 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     //VARIABLES//
     public int timer = 10;    //The # of time (in seconds) a level is.
     private float minutes;
     private float seconds; 
+    public GameObject interactPrompt;
     public TextMeshProUGUI interactText; //text that appears on screen whenever players can pickup an object
     public List<GameObject> playerInventory = new List<GameObject>(); //INGAME player inventory which holds items in player inventory
 
@@ -35,6 +37,12 @@ public class GameManager : MonoBehaviour
     public GameObject continueButton; //reference to continue button, which is only active when the player correctly got the pose right 
     public int itemsCollected = 0; 
 
+    //THE MAX AMOUNT OF ITEMS A PLAYER CAN HOLD IN A LEVEL (CHANGES EVERY LEVEL)
+    public int maxInventoryItems;
+
+    //Reference to current scene
+    private int currentScene;
+
     // Start is called before the first frame update
     //Make sure to initialize (reset) variables EVERY TIME a scene is loaded.
     void Start()
@@ -48,6 +56,7 @@ public class GameManager : MonoBehaviour
         StopAllCoroutines();
         StartCoroutine(GameTimer());
         interactText.text = "";
+        interactPrompt.SetActive(false);
         currentStateText.text = "";
         posePanel.SetActive(false);
         player = GameObject.Find("Zort");
@@ -56,6 +65,15 @@ public class GameManager : MonoBehaviour
         inventory.SetActive(true);
         continueButton.SetActive(false);
         pauseMenu.SetActive(false);
+        currentScene = SceneManager.GetActiveScene().buildIndex;
+        if(currentScene == 1)
+        {
+            maxInventoryItems = 3;
+        }
+        else if(currentScene == 2)
+        {
+            maxInventoryItems = 4;
+        }
     }
 
     // Update is called once per frame

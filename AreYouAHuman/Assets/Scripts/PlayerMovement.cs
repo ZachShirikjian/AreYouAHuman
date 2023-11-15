@@ -14,6 +14,8 @@ public class PlayerMovement : MonoBehaviour
     private Rigidbody2D rb2d;
     public Transform groundCheck;
     public LayerMask groundLayer;
+    public AudioSource sfxSource;
+    public AudioManager audioManager;
     // public float acceleration = 0;
     // public float speed = 5f; //factor of how fast/slow character moves
     // private Rigidbody2D rb2d; //reference to RB, which holds player physics
@@ -43,6 +45,7 @@ public class PlayerMovement : MonoBehaviour
        if(Input.GetKeyDown(KeyCode.Space) && isGrounded())
        {
             rb2d.velocity = new Vector2(rb2d.velocity.x, jumpPower);
+            sfxSource.PlayOneShot(audioManager.jump);
        }
 
        if(Input.GetKeyUp(KeyCode.Space) && rb2d.velocity.y > 0f)

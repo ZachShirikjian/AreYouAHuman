@@ -9,16 +9,19 @@ public class InventoryUI : MonoBehaviour
     //Updates the UI of our inventory to correctly displayed the item you got in the current slot 
 
     //REFERENCES//
+    private GameObject player;
     private GameManager gm;
     public GameObject slotList;
     public InventorySlot[] slots;
     public List<InventoryItem> inventoryItems = new List<InventoryItem>();
-    // public InventorySlot[] InventorySlots = new InventorySlot[3];
+    public AudioSource sfxSource;
+    public AudioManager audioManager;
 
     //At the start of the level, clear all of the Inventory Slots
     void Start()
     {
         gm = GameObject.Find("GameManager").GetComponent<GameManager>();
+        player = GameObject.FindWithTag("Player");
         slots = slotList.GetComponentsInChildren<InventorySlot>();
         for(int i = 0; i < slots.Length; i++)
         {
@@ -29,29 +32,42 @@ public class InventoryUI : MonoBehaviour
 
     public void UpdateUI()
     {
-        for(int i = 0; i < slots.Length; i++)
+        for (int i = 0; i < gm.playerInventory.Count; i++)
         {
-            if(i < gm.playerInventory.Count)
-            {
-                // if(inventoryItems[i].alreadyAdded == true)
-                // {
-                //     Debug.Log("CAN'T ADD RIP");
-                // }
-                if(inventoryItems[i].alreadyAdded == false)
-                {
-                    Debug.Log("ADDED ITEM");
-                    slots[i].AddItem(inventoryItems[i]);
-                    inventoryItems[i].alreadyAdded = true;
-                }
-                // slots[i].AddItem(gm.inventoryItems[i]);
-            }
-            // else 
-            // {
-            //      slots[i].ClearSlot();
-            // }
+            slots[i].AddItem(inventoryItems[i]);
+            inventoryItems[i].alreadyAdded = true;
+            sfxSource.PlayOneShot(audioManager.collectItem);
+        }
+        // if(currentSlot < 3)
+        // {
+        //     Debug.Log("WORKS");
+        //     inventoryItems.Add(item);
+        //     slots[currentSlot].AddItem(item);
+        //     currentSlot++;
+        // }
+
+        // if(item.alreadyAdded == false)
+        // {
+        //     for(int i = 0; i < 3; i++)
+        //     {
+        //         if((i < gm.playerInventory.Count && i >= 0)&& inventoryItems[i] == null)
+        //         {
+        //             inventoryItems.Add(item);
+        //             slots[i].AddItem(item);
+        //             // inventoryItems[i].alreadyAdded = true;
+        //         }
+    
+        //             // if(inventoryItems[i].alreadyAdded == false)
+        //             // {
+        //             //     Debug.Log("CAN ADD ITEM");
+        //             //     slots[i].AddItem(item);
+        //             //     inventoryItems[i].alreadyAdded = true;
+        //             // }
+        //         }
+        //         item.alreadyAdded = true;
+        // }
 
         }
-    }
 
     //Removes an item from the inventory when the button is clicked.
     public void RemoveItem(InventoryItem item)
@@ -59,6 +75,12 @@ public class InventoryUI : MonoBehaviour
         // slots[].ClearSlot();
         // inventoryItems[i].alreadyAdded = false;
         inventoryItems.Remove(item);
+        sfxSource.PlayOneShot(audioManager.dropItem);
+ //       gm.playerInventory.pop()
+        // Instantiate(,player.transform.position, Quaternion.rotation);
+
+
+        //Places the original item back into the scene 
         // for(int i = 0; i < slots.Length; i++)
         // {
         //         // if(inventoryItems[i].alreadyAdded == true)

@@ -21,15 +21,15 @@ public class PlayerInteract : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKey(KeyCode.E) && canInteract == true)
+        if(Input.GetKeyDown(KeyCode.E) && canInteract == true)
         {
             gm.playerInventory.Add(selectedObject);
-            // selectedObject.GetComponent<InventoryItem>().currentSprite.sprite = selectedObject.GetComponent<InventoryItem>().collectedSprite;
             Debug.Log("PICKEDUP PROP");
             inventoryUI.inventoryItems.Add(selectedObject.GetComponent<InventoryItem>());
             inventoryUI.UpdateUI();
+            //inventoryUI.UpdateUI(selectedObject.GetComponent<InventoryItem>());
             gm.itemsCollected++;
-                        selectedObject.SetActive(false);
+            selectedObject.SetActive(false);
         }
     }
 
@@ -38,14 +38,15 @@ public class PlayerInteract : MonoBehaviour
     {
         if(other.gameObject.tag == "Prop")
         {
-            if(gm.playerInventory.Count < 3)
+            if(gm.playerInventory.Count < gm.maxInventoryItems)
             {
                 Debug.Log("CAN PICKUP PROP");
-                gm.interactText.text = "[E] Pick up";
+                gm.interactText.text = "Pick up";
+                gm.interactPrompt.SetActive(true);
                 canInteract = true;
                 selectedObject = other.gameObject;
             }
-            else if(gm.playerInventory.Count >= 3)
+            else if(gm.playerInventory.Count >= gm.maxInventoryItems)
             {
                 Debug.Log("CAN'T PICKUP PROP");
                 gm.interactText.text = "Inventory is Full";
@@ -57,6 +58,7 @@ public class PlayerInteract : MonoBehaviour
     public void OnTriggerExit2D(Collider2D other)
     {
         gm.interactText.text = "";
+        gm.interactPrompt.SetActive(false);
         canInteract = false;
         selectedObject = null;
     }
