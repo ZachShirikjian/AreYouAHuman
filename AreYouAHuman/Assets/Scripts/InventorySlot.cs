@@ -1,4 +1,4 @@
-using System.Collections;
+    using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -12,7 +12,7 @@ public class InventorySlot : MonoBehaviour
     public Image icon; //reference to a UI icon of inventory slot 
 
     InventoryItem item; //reference to an Item from our Item class 
-
+    public InventoryUI theUI; //reference to the UI for the Inventory
     public void AddItem(InventoryItem newItem)
     {
         item = newItem;
@@ -24,8 +24,10 @@ public class InventorySlot : MonoBehaviour
     //Clears inventory slot UI when an Item is removed in the Inventory script 
     public void ClearSlot()
     {
+        theUI.RemoveItem(item);
         item = null;
         icon.sprite = null;
         icon.enabled = false;
+        Debug.Log("CLEARED ITEM");
     }
 }

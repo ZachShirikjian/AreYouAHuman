@@ -53,9 +53,23 @@ public class InventoryUI : MonoBehaviour
         }
     }
 
-    //
-    public void RemoveItem()
+    //Removes an item from the inventory when the button is clicked.
+    public void RemoveItem(InventoryItem item)
     {
-        
+        // slots[].ClearSlot();
+        // inventoryItems[i].alreadyAdded = false;
+        inventoryItems.Remove(item);
+        // for(int i = 0; i < slots.Length; i++)
+        // {
+        //         // if(inventoryItems[i].alreadyAdded == true)
+        //         // {
+        //         //     Debug.Log("CAN'T ADD RIP");
+        //         // }
+        //         if(inventoryItems[i].alreadyAdded == true)
+        //         {
+        //             Debug.Log("REMOVE ITEM");
+        //             slots[i].ClearSlot();
+        //         }
+        // }
     }
 }
