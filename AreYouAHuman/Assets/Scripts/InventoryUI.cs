@@ -88,6 +88,7 @@ public class InventoryUI : MonoBehaviour
             newCopy.SetActive(true);
             Destroy(item.gameObject);
             gm.playerInventory.Remove(item.gameObject);
+            gm.itemsCollected--;
         }
 
 

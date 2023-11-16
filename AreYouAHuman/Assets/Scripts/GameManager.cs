@@ -13,7 +13,15 @@ public class GameManager : MonoBehaviour
     private float seconds; 
     public GameObject interactPrompt;
     public TextMeshProUGUI interactText; //text that appears on screen whenever players can pickup an object
+
+    //INVENTORY//
     public List<GameObject> playerInventory = new List<GameObject>(); //INGAME player inventory which holds items in player inventory
+    public GameObject inventory; //Reference to Player's Inventory UI, which doesn't get shown at PoseCheck screen
+    public int maxInventoryItems;        //THE MAX AMOUNT OF ITEMS A PLAYER CAN HOLD IN A LEVEL (CHANGES EVERY LEVEL)
+    public int itemsCollected = 0; 
+    public GameObject correctItem; //1st Correct Item for the Pose 
+    public GameObject correctItem2; //2nd Correct Item for the Pose 
+     public GameObject correctItem3; //3rd Correct Item for the Pose 
 
     // public InventoryItem[] iventoryItems = new InventoryItem[3]; //UI player inventory
     public TextMeshProUGUI currentStateText;
@@ -21,7 +29,6 @@ public class GameManager : MonoBehaviour
     //REFERENCES//
     public TextMeshProUGUI timerText; //References the timer text to display how much time is left 
     private GameObject player; //Reference to Player GameObject
-    public GameObject inventory; //Reference to Player's Inventory UI, which doesn't get shown at PoseCheck screen
 
     //PAUSE MENU//
     private bool paused = false;
@@ -35,12 +42,7 @@ public class GameManager : MonoBehaviour
     public Sprite checkmark; //checkmark if player passed captcha
     public Sprite xMark; //X symbol if player failed captcha
     public GameObject submitButton;
-    
     public GameObject continueButton; //reference to continue button, which is only active when the player correctly got the pose right 
-    public int itemsCollected = 0; 
-
-    //THE MAX AMOUNT OF ITEMS A PLAYER CAN HOLD IN A LEVEL (CHANGES EVERY LEVEL)
-    public int maxInventoryItems;
 
     //Reference to current scene
     private int currentScene;
@@ -150,39 +152,47 @@ public class GameManager : MonoBehaviour
 
     public void ComparePose()
     {
-        inventory.SetActive(false);
+         inventory.SetActive(false);
          posePanel.SetActive(true);
-         switch(itemsCollected)
+        //  PrefabUtility.GetPrefabType(correctItem);  
+         if(playerInventory.Contains(correctItem) && playerInventory.Contains(correctItem2) && playerInventory.Contains(correctItem3))
          {
-             case 1:
-                 playerPose.sprite = poseImages[4];
-                 boxIcon.sprite = xMark;
-                 break;
-             case 2:
-                 playerPose.sprite = poseImages[2];
-                 boxIcon.sprite = xMark;
-                 break;
-             case 3:
+            Debug.Log("ALL ITEMS COLLECTED");
                  playerPose.sprite = poseImages[0];
                  boxIcon.sprite = checkmark;
                  continueButton.SetActive(true);
-                 break;
-            //  case 4: 
-            //      playerPose.sprite = poseImages[3];
-            //      boxIcon.sprite = xMark;
-            //  case 5: 
-            //      playerPose.sprite = poseImages[4];
-            //      boxIcon.sprite = xMark;
-            //  case 6: 
-            //      playerPose.sprite = poseImages[5];
-            //      boxIcon.sprite = xMark;
-            //  case 7: 
-            //      playerPose.sprite = poseImages[6];
-            //      boxIcon.sprite = xMark;
-         default:
-             playerPose.sprite = poseImages[7];
-             boxIcon.sprite = xMark;
-             break;
          }
+        //  switch(itemsCollected)
+        //  {
+        //      case 1:
+        //          playerPose.sprite = poseImages[4];
+        //          boxIcon.sprite = xMark;
+        //          break;
+        //      case 2:
+        //          playerPose.sprite = poseImages[2];
+        //          boxIcon.sprite = xMark;
+        //          break;
+        //      case 3:
+        //          playerPose.sprite = poseImages[0];
+        //          boxIcon.sprite = checkmark;
+        //          continueButton.SetActive(true);
+        //          break;
+        //     //  case 4: 
+        //     //      playerPose.sprite = poseImages[3];
+        //     //      boxIcon.sprite = xMark;
+        //     //  case 5: 
+        //     //      playerPose.sprite = poseImages[4];
+        //     //      boxIcon.sprite = xMark;
+        //     //  case 6: 
+        //     //      playerPose.sprite = poseImages[5];
+        //     //      boxIcon.sprite = xMark;
+        //     //  case 7: 
+        //     //      playerPose.sprite = poseImages[6];
+        //     //      boxIcon.sprite = xMark;
+        //  default:
+        //      playerPose.sprite = poseImages[7];
+        //      boxIcon.sprite = xMark;
+        //      break;
+        //  }
     }
 }

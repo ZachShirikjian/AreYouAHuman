@@ -5,18 +5,13 @@ using UnityEngine.SceneManagement;
 public class TitleScreen : MonoBehaviour
 {
     //REFERENCES//
-    public GameObject creditsPanel;
+    public GameObject creditsPanel; //Reference to the Credits panel GameObject in the TitleScreen
+    public GameObject tutorialPanel; //Reference to the Tutorial panel GameObject in the TitleScreen
 
     // Start is called before the first frame update
     void Start()
     {
         creditsPanel.SetActive(false);
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 
     //Loads up the SampleScene when the StartButton is pressed.
@@ -34,6 +29,18 @@ public class TitleScreen : MonoBehaviour
     public void CloseCredits()
     {
         creditsPanel.SetActive(false);
+    }
+
+    //Opens the TutorialPanel in the TitleScreen
+    public void OpenTutorial()
+    {
+        tutorialPanel.SetActive(true);
+    }
+
+    //Closes out of the TutorialPanel in the TitleScreen
+    public void CloseTutorial()
+    {
+        tutorialPanel.SetActive(false);
     }
     //Exits out of the game (only works in Builds)
     public void QuitGame()
