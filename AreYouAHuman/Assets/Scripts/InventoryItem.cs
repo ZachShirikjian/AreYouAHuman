@@ -13,12 +13,12 @@ public class InventoryItem : MonoBehaviour
     private GameManager gm; 
     public Sprite defaultSprite;
     // public Sprite collectedSprite; 
-    public Image icon; 
+    // public Image icon; 
     public bool alreadyAdded =false;
     // Start is called before the first frame update
     void Start()
     {
-        icon.sprite = defaultSprite; 
+        // icon.sprite = defaultSprite; 
         gm = GameObject.Find("GameManager").GetComponent<GameManager>();
         // interactScript = GameObject.Find("Zort").GetComponent<PlayerInteract>();
     }

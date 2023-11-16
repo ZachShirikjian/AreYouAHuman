@@ -14,7 +14,7 @@ public class AudioManager : MonoBehaviour
     public AudioClip wrongPose;
     public AudioClip poseResults;
     public AudioClip tenSeconds;
-    public AudioClip timesUp;
+    public AudioClip timesUp;   
     // Start is called before the first frame update
     void Start()
     {

@@ -16,6 +16,7 @@ public class InventoryUI : MonoBehaviour
     public List<InventoryItem> inventoryItems = new List<InventoryItem>();
     public AudioSource sfxSource;
     public AudioManager audioManager;
+    public GameObject newCopy;
 
     //At the start of the level, clear all of the Inventory Slots
     void Start()
@@ -83,7 +84,9 @@ public class InventoryUI : MonoBehaviour
         if(gm.playerInventory.Count > 0)
         {
             Debug.Log("REMOVAL SUCCESSFUL");
-            Instantiate(item.gameObject,player.transform.position, Quaternion.identity);
+            newCopy = Instantiate(item.gameObject,player.transform.position, Quaternion.identity);
+            newCopy.SetActive(true);
+            Destroy(item.gameObject);
             gm.playerInventory.Remove(item.gameObject);
         }
 
