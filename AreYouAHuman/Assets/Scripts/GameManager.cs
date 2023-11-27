@@ -50,6 +50,7 @@ public class GameManager : MonoBehaviour
     //Reference to Audio stuff
     public AudioManager audioManager;
     public AudioSource sfxSource;
+    public AudioSource musicSource;
     // Start is called before the first frame update
     //Make sure to initialize (reset) variables EVERY TIME a scene is loaded.
     void Start()
@@ -118,6 +119,7 @@ public class GameManager : MonoBehaviour
         player.SetActive(false);
         currentStateText.text = "FINISH!";
         sfxSource.PlayOneShot(audioManager.timesUp);
+        musicSource.Stop();
         Invoke("ComparePose", 3.0f);
     }
 
