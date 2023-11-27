@@ -47,6 +47,9 @@ public class GameManager : MonoBehaviour
     //Reference to current scene
     private int currentScene;
 
+    //Reference to Audio stuff
+    public AudioManager audioManager;
+    public AudioSource sfxSource;
     // Start is called before the first frame update
     //Make sure to initialize (reset) variables EVERY TIME a scene is loaded.
     void Start()
@@ -114,6 +117,7 @@ public class GameManager : MonoBehaviour
         Debug.Log("Call CheckPose() method.");
         player.SetActive(false);
         currentStateText.text = "FINISH!";
+        sfxSource.PlayOneShot(audioManager.timesUp);
         Invoke("ComparePose", 3.0f);
     }
 
@@ -139,15 +143,17 @@ public class GameManager : MonoBehaviour
                 {
                     timerText.text = minutes.ToString() + ":0" + seconds.ToString();
                 }
+                if(seconds <= 0)
+                {
+                    StopTimer();
+                }
             }
             if(timerRunning == false)
             {
+                Debug.Log("STOP TIMER");
                 break;
             }
-
         }
-        StopTimer();
-
     }
 
     public void ComparePose()
@@ -157,10 +163,15 @@ public class GameManager : MonoBehaviour
         //  PrefabUtility.GetPrefabType(correctItem);  
          if(playerInventory.Contains(correctItem) && playerInventory.Contains(correctItem2) && playerInventory.Contains(correctItem3))
          {
-            Debug.Log("ALL ITEMS COLLECTED");
+                 Debug.Log("ALL ITEMS COLLECTED");
                  playerPose.sprite = poseImages[0];
                  boxIcon.sprite = checkmark;
                  continueButton.SetActive(true);
+                 sfxSource.PlayOneShot(audioManager.correctPose);
+         }
+         else 
+         {
+               sfxSource.PlayOneShot(audioManager.wrongPose);
          }
         //  switch(itemsCollected)
         //  {
