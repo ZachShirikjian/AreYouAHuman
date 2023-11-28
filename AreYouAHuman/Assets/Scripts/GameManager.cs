@@ -37,7 +37,7 @@ public class GameManager : MonoBehaviour
     //POSE CHECK//
     public GameObject posePanel; //Reference to the Pose Panel that appears at the end of the level 
     public Image playerPose;
-    public Sprite[] poseImages = new Sprite[8];
+    public GameObject[] inventorySprites = new GameObject[3];
     public Image boxIcon; //displays checkmark or X if captcha is correct or not
     public Sprite checkmark; //checkmark if player passed captcha
     public Sprite xMark; //X symbol if player failed captcha
@@ -83,6 +83,10 @@ public class GameManager : MonoBehaviour
         else if(currentScene == 2)
         {
             maxInventoryItems = 4;
+        }
+        for(int i = 0; i < inventorySprites.Length; i++)
+        {
+            inventorySprites[i].SetActive(false);
         }
     }
 
@@ -163,49 +167,33 @@ public class GameManager : MonoBehaviour
          inventory.SetActive(false);
          posePanel.SetActive(true);
         //  PrefabUtility.GetPrefabType(correctItem);  
-         if(playerInventory.Contains(correctItem) && playerInventory.Contains(correctItem2) && playerInventory.Contains(correctItem3))
-         {
-                 Debug.Log("ALL ITEMS COLLECTED");
-                 playerPose.sprite = poseImages[0];
-                 boxIcon.sprite = checkmark;
-                 continueButton.SetActive(true);
-                 sfxSource.PlayOneShot(audioManager.correctPose);
-         }
-         else 
-         {
-               sfxSource.PlayOneShot(audioManager.wrongPose);
-         }
-        //  switch(itemsCollected)
-        //  {
-        //      case 1:
-        //          playerPose.sprite = poseImages[4];
-        //          boxIcon.sprite = xMark;
-        //          break;
-        //      case 2:
-        //          playerPose.sprite = poseImages[2];
-        //          boxIcon.sprite = xMark;
-        //          break;
-        //      case 3:
-        //          playerPose.sprite = poseImages[0];
-        //          boxIcon.sprite = checkmark;
-        //          continueButton.SetActive(true);
-        //          break;
-        //     //  case 4: 
-        //     //      playerPose.sprite = poseImages[3];
-        //     //      boxIcon.sprite = xMark;
-        //     //  case 5: 
-        //     //      playerPose.sprite = poseImages[4];
-        //     //      boxIcon.sprite = xMark;
-        //     //  case 6: 
-        //     //      playerPose.sprite = poseImages[5];
-        //     //      boxIcon.sprite = xMark;
-        //     //  case 7: 
-        //     //      playerPose.sprite = poseImages[6];
-        //     //      boxIcon.sprite = xMark;
-        //  default:
-        //      playerPose.sprite = poseImages[7];
-        //      boxIcon.sprite = xMark;
-        //      break;
-        //  }
+        if(playerInventory.Contains(correctItem))
+        {
+            Debug.Log("GOT ITEM 1");
+            inventorySprites[0].SetActive(true);
+            if(playerInventory.Contains(correctItem2) && playerInventory.Contains(correctItem3))
+            {
+                continueButton.SetActive(true);
+                sfxSource.PlayOneShot(audioManager.correctPose);
+                boxIcon.sprite = checkmark;
+            }
+        }
+        if(playerInventory.Contains(correctItem2))
+        {
+            Debug.Log("GOT ITEM 2");
+            inventorySprites[1].SetActive(true);
+        }
+        if(playerInventory.Contains(correctItem3))
+        {   
+            Debug.Log("GOT ITEM 3");
+            inventorySprites[2].SetActive(true);
+        }
+
+        else
+        {
+            Debug.Log("NO ITEMS");
+            boxIcon.sprite = xMark;
+            sfxSource.PlayOneShot(audioManager.wrongPose);
+        }
     }
 }
