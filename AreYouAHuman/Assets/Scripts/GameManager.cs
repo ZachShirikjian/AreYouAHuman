@@ -141,13 +141,19 @@ public class GameManager : MonoBehaviour
                 timer--;
                 minutes = Mathf.Floor(timer / 60);
                 seconds =  timer - minutes * 60;
-                if(seconds >= 10)
+                if(seconds > 10)
                 {
                     timerText.text = minutes.ToString() + ":" + seconds.ToString();
+                }
+                if(seconds == 10)
+                {
+                    timerText.text = minutes.ToString() + ":" + seconds.ToString();
+                    sfxSource.PlayOneShot(audioManager.tenSeconds);
                 }
                 if(seconds < 10)
                 {
                     timerText.text = minutes.ToString() + ":0" + seconds.ToString();
+                    sfxSource.PlayOneShot(audioManager.tenSeconds);
                 }
                 if(seconds <= 0)
                 {
