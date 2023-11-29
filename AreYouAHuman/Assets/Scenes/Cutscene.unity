@@ -252,6 +252,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 6eb0ac3bd68a544a2bb3378bebda9185, type: 3}
   - {fileID: 21300000, guid: 1946c2a2159eb4978a15ff2eb46542bb, type: 3}
   - {fileID: 21300000, guid: 0ee61817d602f4b5bb822a3d5d1ad791, type: 3}
+  - {fileID: 21300000, guid: 0ee61817d602f4b5bb822a3d5d1ad791, type: 3}
   dialogue:
   - {fileID: 11400000, guid: 3787de65b5a0d472d9d3780a4552002d, type: 2}
   - {fileID: 11400000, guid: 1304baafec9f04393af115cf1a4ae20e, type: 2}
