@@ -3,11 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.SceneManagement;
 public class CutsceneDialogue : MonoBehaviour
 {
     //VARIABLES//
     public int curPlace;
     public TextMeshProUGUI currentDialogue;
+    public TextMeshProUGUI speaker;
     public Image currentImage; 
 
     //REFERENCES//
@@ -23,6 +25,7 @@ public class CutsceneDialogue : MonoBehaviour
         currentDialogue.text = dialogue[curPlace].zortText;
         dialogueAnim.SetTrigger("NewDialogue");
         dialogueBox.SetActive(true);
+        speaker.text = "Zort";
     }
 
     // Update is called once per frame
@@ -41,12 +44,17 @@ public class CutsceneDialogue : MonoBehaviour
             currentImage.sprite = cutsceneBG[curPlace];
             currentDialogue.text = dialogue[curPlace].zortText;
         }
-        else if(curPlace >= cutsceneBG.Length -1)
+        else if(curPlace == cutsceneBG.Length -1)
         {
             dialogueBox.SetActive(false);
             currentImage.sprite = cutsceneBG[curPlace];
             currentDialogue.text = "";
             dialogueAnim.SetBool("EndDialogue",true);
+            speaker.text = "";
+        }
+        else if(curPlace > cutsceneBG.Length -1)
+        {
+            SceneManager.LoadScene(0);
         }
     }
 }

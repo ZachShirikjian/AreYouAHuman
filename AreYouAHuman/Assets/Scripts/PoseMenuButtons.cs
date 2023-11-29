@@ -13,7 +13,7 @@ public class PoseMenuButtons : MonoBehaviour
     //Continues onto the next level, if the player got the pose correct
     public void NextLevel()
     {
-        Debug.Log("SceneManager.LoadScene(Level2)");
+        SceneManager.LoadScene("Cutscene");
     }
 
     //Exits back to the Title Screen

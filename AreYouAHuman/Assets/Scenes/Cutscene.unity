@@ -244,6 +244,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   curPlace: 0
   currentDialogue: {fileID: 1515256395}
+  speaker: {fileID: 768695253}
   currentImage: {fileID: 1511720484}
   cutsceneBG:
   - {fileID: 21300000, guid: b49ad18075684442490565cfe8613907, type: 3}
