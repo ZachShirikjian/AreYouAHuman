@@ -17,7 +17,7 @@ public class TitleScreen : MonoBehaviour
     //Loads up the SampleScene when the StartButton is pressed.
     public void StartGame()
     {
-        SceneManager.LoadScene("SampleScene");
+        SceneManager.LoadScene("Level1");
     }
 
     //Opens the CreditsPanel in the TitleScreen

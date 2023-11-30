@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 75e3c1daa4f334f2b91774dd79e03c9a, type: 3}
   m_Name: Dialogue2
   m_EditorClassIdentifier: 
-  zortText: I even learned the local language from when I landed on Earth too!
+  zortText: I even learned the local language since I got here on Earth.

@@ -7,7 +7,7 @@ public class PoseMenuButtons : MonoBehaviour
     //Reloads the current level from the beginning 
     public void RestartLevel()
     {
-        SceneManager.LoadScene("SampleScene");
+        SceneManager.LoadScene("Level1");
     }
 
     //Continues onto the next level, if the player got the pose correct
