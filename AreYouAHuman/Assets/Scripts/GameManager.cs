@@ -21,7 +21,7 @@ public class GameManager : MonoBehaviour
     public int itemsCollected = 0; 
     public GameObject correctItem; //1st Correct Item for the Pose 
     public GameObject correctItem2; //2nd Correct Item for the Pose 
-     public GameObject correctItem3; //3rd Correct Item for the Pose 
+    public GameObject correctItem3; //3rd Correct Item for the Pose 
 
     // public InventoryItem[] iventoryItems = new InventoryItem[3]; //UI player inventory
     public TextMeshProUGUI currentStateText;
@@ -172,7 +172,14 @@ public class GameManager : MonoBehaviour
     {
          inventory.SetActive(false);
          posePanel.SetActive(true);
-        //  PrefabUtility.GetPrefabType(correctItem);  
+
+        // bool isPrefab = PrefabStage.IsPartOfPrefabContents(correctItem);
+        // playerInventory.Contains(typeof(correctItem));
+        if (typeof(GameObject).IsAssignableFrom(correctItem.GetType()))
+        {
+            Debug.Log("OOOOOOO");
+        }
+
         if(playerInventory.Contains(correctItem))
         {
             Debug.Log("GOT ITEM 1");
