@@ -12,6 +12,9 @@ public class PlayerInteract : MonoBehaviour
     private GameManager gm; //Reference to GameManager script
     public InventoryUI inventoryUI; //Reference to inventoryUI script 
 
+    //LIST OF ALL THE BODY PARTS PROPS CAN BE PUT ON 
+    public GameObject[] bodyParts = new GameObject[4]; 
+
     // Start is called before the first frame update
     void Start()
     {
@@ -27,10 +30,45 @@ public class PlayerInteract : MonoBehaviour
             Debug.Log("PICKEDUP PROP");
             inventoryUI.inventoryItems.Add(selectedObject.GetComponent<InventoryItem>());
             inventoryUI.UpdateUI();
+            SwapSprite(selectedObject.GetComponent<InventoryItem>().itemPosition);
             //inventoryUI.UpdateUI(selectedObject.GetComponent<InventoryItem>());
+            // selectedObject.GetComponent<InventoryItem>().Position;
             gm.itemsCollected++;
             selectedObject.SetActive(false);
         }
+    }
+
+    //Puts on the Prop the player picked up to the correctly assigned part of Zort's body.//
+    //Set the Position of the InventoryItem in the itemPosition dropdown menu in the Inspector.//
+    public void SwapSprite(Position pos)
+    {
+        switch(pos)
+        {
+            case Position.Head:
+                Debug.Log("PROP ON HEAD");
+                bodyParts[0].GetComponent<SpriteRenderer>().enabled = true; 
+                bodyParts[0].GetComponent<SpriteRenderer>().sprite = selectedObject.GetComponent<InventoryItem>().defaultSprite;
+                break;
+            case Position.Torso:
+                Debug.Log("PROP ON TORSO");
+                bodyParts[1].GetComponent<SpriteRenderer>().enabled = true; 
+                bodyParts[1].GetComponent<SpriteRenderer>().sprite = selectedObject.GetComponent<InventoryItem>().defaultSprite;
+                break;
+            case Position.Hand:
+                Debug.Log("PROP ON HAND");
+                bodyParts[2].GetComponent<SpriteRenderer>().enabled = true; 
+                bodyParts[2].GetComponent<SpriteRenderer>().sprite = selectedObject.GetComponent<InventoryItem>().defaultSprite;
+                break;
+            case Position.Pants:
+                 Debug.Log("PROP ON PANTS");
+                bodyParts[3].GetComponent<SpriteRenderer>().enabled = true; 
+                bodyParts[3].GetComponent<SpriteRenderer>().sprite = selectedObject.GetComponent<InventoryItem>().defaultSprite;
+                break;
+            default:
+            break;
+        }
+        // .SetActive(true);
+        // pos.sprite = selectedObject.GetComponent<InventoryItem>().defaultSprite;
     }
 
 

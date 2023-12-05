@@ -19,9 +19,11 @@ public class GameManager : MonoBehaviour
     public GameObject inventory; //Reference to Player's Inventory UI, which doesn't get shown at PoseCheck screen
     public int maxInventoryItems;        //THE MAX AMOUNT OF ITEMS A PLAYER CAN HOLD IN A LEVEL (CHANGES EVERY LEVEL)
     public int itemsCollected = 0; 
-    public GameObject correctItem; //1st Correct Item for the Pose 
-    public GameObject correctItem2; //2nd Correct Item for the Pose 
-    public GameObject correctItem3; //3rd Correct Item for the Pose 
+
+    public GameObject[] correctItems;
+    // public GameObject correctItem; //1st Correct Item for the Pose 
+    // public GameObject correctItem2; //2nd Correct Item for the Pose 
+    // public GameObject correctItem3; //3rd Correct Item for the Pose 
 
     // public InventoryItem[] iventoryItems = new InventoryItem[3]; //UI player inventory
     public TextMeshProUGUI currentStateText;
@@ -173,45 +175,55 @@ public class GameManager : MonoBehaviour
          inventory.SetActive(false);
          posePanel.SetActive(true);
 
-        // bool isPrefab = PrefabStage.IsPartOfPrefabContents(correctItem);
-        // playerInventory.Contains(typeof(correctItem));
-        if (typeof(GameObject).IsAssignableFrom(correctItem.GetType()))
-        {
-            Debug.Log("OOOOOOO");
-        }
-
-        // if(playerInventory.Exists(correctItem))
+        // if (typeof(GameObject).IsAssignableFrom(correctItem.GetType()))
         // {
-        //     Debug.Log("TEST");
+        //     Debug.Log("OOOOOOO");
         // }
 
-        if(playerInventory.Contains(correctItem))
+        for(int i = 0; i < playerInventory.Count; i++)
         {
-            Debug.Log("GOT ITEM 1");
-            inventorySprites[0].SetActive(true);
-            if(playerInventory.Contains(correctItem2) && playerInventory.Contains(correctItem3))
+            if(playerInventory.Contains(correctItems[i]))
             {
-                continueButton.SetActive(true);
-                sfxSource.PlayOneShot(audioManager.correctPose);
-                boxIcon.sprite = checkmark;
+                inventorySprites[i].SetActive(true);
+            }
+            else 
+            {
+                boxIcon.sprite = xMark;
+                sfxSource.PlayOneShot(audioManager.wrongPose);
+                break;
             }
         }
-        if(playerInventory.Contains(correctItem2))
-        {
-            Debug.Log("GOT ITEM 2");
-            inventorySprites[1].SetActive(true);
-        }
-        if(playerInventory.Contains(correctItem3))
-        {   
-            Debug.Log("GOT ITEM 3");
-            inventorySprites[2].SetActive(true);
-        }
+                // continueButton.SetActive(true);
+                // sfxSource.PlayOneShot(audioManager.correctPose);
+                // boxIcon.sprite = checkmark;
 
-        else
-        {
-            Debug.Log("NO ITEMS");
-            boxIcon.sprite = xMark;
-            sfxSource.PlayOneShot(audioManager.wrongPose);
-        }
+        // if(playerInventory.Contains(correctItem))
+        // {
+        //     Debug.Log("GOT ITEM 1");
+        //     inventorySprites[0].SetActive(true);
+        // }
+        // if(playerInventory.Contains(correctItem2))
+        // {
+        //     Debug.Log("GOT ITEM 2");
+        //     inventorySprites[1].SetActive(true);
+        // }
+        // if(playerInventory.Contains(correctItem3))
+        // {   
+        //     Debug.Log("GOT ITEM 3");
+        //     inventorySprites[2].SetActive(true);
+        // }
+
+        // if(playerInventory.Contains(correctItem1) && playerInventory.Contains(correctItem2) && playerInventory.Contains(correctItem3))
+        // {
+        //         continueButton.SetActive(true);
+        //         sfxSource.PlayOneShot(audioManager.correctPose);
+        //         boxIcon.sprite = checkmark;
+        // }
+        // else
+        // {
+        //     Debug.Log("NO ITEMS");
+        //     boxIcon.sprite = xMark;
+        //     sfxSource.PlayOneShot(audioManager.wrongPose);
+        // }
     }
 }
