@@ -84,9 +84,11 @@ public class InventoryUI : MonoBehaviour
         if(gm.playerInventory.Count > 0)
         {
             Debug.Log("REMOVAL SUCCESSFUL");
-            newCopy = Instantiate(item.gameObject,player.transform.position, Quaternion.identity);
-            newCopy.SetActive(true);
-            Destroy(item.gameObject);
+            // newCopy = Instantiate(item.gameObject,player.transform.position, Quaternion.identity);
+            // newCopy.SetActive(true);
+            item.gameObject.SetActive(true);
+            item.gameObject.transform.position = player.transform.position;
+            // Destroy(item.gameObject);
             gm.playerInventory.Remove(item.gameObject);
             gm.itemsCollected--;
         }

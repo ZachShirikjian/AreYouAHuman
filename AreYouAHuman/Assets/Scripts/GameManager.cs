@@ -180,6 +180,11 @@ public class GameManager : MonoBehaviour
             Debug.Log("OOOOOOO");
         }
 
+        // if(playerInventory.Exists(correctItem))
+        // {
+        //     Debug.Log("TEST");
+        // }
+
         if(playerInventory.Contains(correctItem))
         {
             Debug.Log("GOT ITEM 1");
