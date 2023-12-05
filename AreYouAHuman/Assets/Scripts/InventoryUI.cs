@@ -10,6 +10,7 @@ public class InventoryUI : MonoBehaviour
 
     //REFERENCES//
     private GameObject player;
+    private PlayerInteract playerInteractScript;
     private GameManager gm;
     public GameObject slotList;
     public InventorySlot[] slots;
@@ -23,6 +24,7 @@ public class InventoryUI : MonoBehaviour
     {
         gm = GameObject.Find("GameManager").GetComponent<GameManager>();
         player = GameObject.FindWithTag("Player");
+        playerInteractScript = player.GetComponent<PlayerInteract>();
         slots = slotList.GetComponentsInChildren<InventorySlot>();
         for(int i = 0; i < slots.Length; i++)
         {
@@ -88,6 +90,27 @@ public class InventoryUI : MonoBehaviour
             // newCopy.SetActive(true);
             item.gameObject.SetActive(true);
             item.gameObject.transform.position = player.transform.position;
+            switch(item.itemPosition)
+            {
+                case Position.Head:
+                    playerInteractScript.bodyParts[0].GetComponent<SpriteRenderer>().enabled = true; 
+                     playerInteractScript.bodyParts[0].GetComponent<SpriteRenderer>().sprite = item.defaultSprite;
+                break;
+                case Position.Torso:
+                     playerInteractScript.bodyParts[1].GetComponent<SpriteRenderer>().enabled = true; 
+                     playerInteractScript.bodyParts[1].GetComponent<SpriteRenderer>().sprite = item.defaultSprite;
+                break;
+                case Position.Hand:
+                     playerInteractScript.bodyParts[2].GetComponent<SpriteRenderer>().enabled = true; 
+                     playerInteractScript.bodyParts[2].GetComponent<SpriteRenderer>().sprite = item.defaultSprite;
+                break;
+                case Position.Pants:
+                     playerInteractScript.bodyParts[3].GetComponent<SpriteRenderer>().enabled = true; 
+                     playerInteractScript.bodyParts[3].GetComponent<SpriteRenderer>().sprite = item.defaultSprite;
+                break;
+                default:
+                break;
+            }
             // Destroy(item.gameObject);
             gm.playerInventory.Remove(item.gameObject);
             gm.itemsCollected--;

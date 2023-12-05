@@ -180,11 +180,15 @@ public class GameManager : MonoBehaviour
         //     Debug.Log("OOOOOOO");
         // }
 
+        //The total amount of correct items that players have collected.
+        int totalItems = 0; 
+
         for(int i = 0; i < playerInventory.Count; i++)
         {
             if(playerInventory.Contains(correctItems[i]))
             {
                 inventorySprites[i].SetActive(true);
+                totalItems++;
             }
             else if(playerInventory.Contains(correctItems[i]) == false)
             {
@@ -193,9 +197,25 @@ public class GameManager : MonoBehaviour
                 break;
             }
         }
-                // continueButton.SetActive(true);
-                // sfxSource.PlayOneShot(audioManager.correctPose);
-                // boxIcon.sprite = checkmark;
+
+        //If the total number of correct items players got is equal or more than the correctItems list,
+        //Players passed the test, so they can play the next level. 
+        //Enable the Continue button and play the CorrectPose SFX.
+        if(totalItems >= correctItems.Length)
+        {
+                continueButton.SetActive(true);
+                sfxSource.PlayOneShot(audioManager.correctPose);
+                boxIcon.sprite = checkmark;
+        }
+
+        //If the total number of correct items players got is less than the amount they were supposed to get,
+        //Players failed the test, so they have to retry the current level.
+        else if(totalItems < correctItems.Length)
+        {
+                 boxIcon.sprite = xMark;
+                sfxSource.PlayOneShot(audioManager.wrongPose);
+        }
+
 
         // if(playerInventory.Contains(correctItem))
         // {
