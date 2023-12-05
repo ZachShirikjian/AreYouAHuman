@@ -67,8 +67,6 @@ public class PlayerInteract : MonoBehaviour
             default:
             break;
         }
-        // .SetActive(true);
-        // pos.sprite = selectedObject.GetComponent<InventoryItem>().defaultSprite;
     }
 
 

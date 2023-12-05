@@ -5218,12 +5218,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 6
-  m_Sprite: {fileID: 21300000, guid: de4edd12a2aa34613a806d9a1280ffe4, type: 3}
+  m_Sprite: {fileID: 21300000, guid: fd2aa0fe6af2b437bbc9cd6dff78becc, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 2.4, y: 3.61}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -5556,7 +5556,7 @@ Transform:
   m_GameObject: {fileID: 1148261164}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: 0}
+  m_LocalPosition: {x: 0, y: 0.9, z: 0}
   m_LocalScale: {x: 0.25, y: 0.25, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -7552,7 +7552,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 2.38, y: 5.99}
+    oldSize: {x: 2.4, y: 6}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -7602,7 +7602,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 5
-  m_Sprite: {fileID: 21300000, guid: fb7a5c670800a468f97ce27848c0dda1, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2b736e35c1767457191f759fa3f910c3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -7735,7 +7735,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 2.38, y: 5.99}
+    oldSize: {x: 2.4, y: 6}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -10468,11 +10468,23 @@ PrefabInstance:
     - target: {fileID: 4279700104106217791, guid: 0b7762565830a41719e169667847e6db, type: 3}
       propertyPath: defaultSprite
       value: 
-      objectReference: {fileID: 21300000, guid: de4edd12a2aa34613a806d9a1280ffe4, type: 3}
+      objectReference: {fileID: 21300000, guid: fd2aa0fe6af2b437bbc9cd6dff78becc, type: 3}
+    - target: {fileID: 5579607797330531779, guid: 0b7762565830a41719e169667847e6db, type: 3}
+      propertyPath: m_Size.x
+      value: 2.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5579607797330531779, guid: 0b7762565830a41719e169667847e6db, type: 3}
+      propertyPath: m_Size.y
+      value: 3.61
+      objectReference: {fileID: 0}
     - target: {fileID: 5579607797330531779, guid: 0b7762565830a41719e169667847e6db, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: de4edd12a2aa34613a806d9a1280ffe4, type: 3}
+      objectReference: {fileID: 21300000, guid: fd2aa0fe6af2b437bbc9cd6dff78becc, type: 3}
+    - target: {fileID: 5579607797330531779, guid: 0b7762565830a41719e169667847e6db, type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6173253830697929473, guid: 0b7762565830a41719e169667847e6db, type: 3}
       propertyPath: m_Size.x
       value: 2.38
@@ -10483,15 +10495,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6173253830697929473, guid: 0b7762565830a41719e169667847e6db, type: 3}
       propertyPath: m_IsTrigger
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6173253830697929473, guid: 0b7762565830a41719e169667847e6db, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.x
-      value: 2.38
+      value: 2.4
       objectReference: {fileID: 0}
     - target: {fileID: 6173253830697929473, guid: 0b7762565830a41719e169667847e6db, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.y
-      value: 3.66
+      value: 3.61
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

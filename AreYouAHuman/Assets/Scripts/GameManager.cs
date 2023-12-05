@@ -186,7 +186,7 @@ public class GameManager : MonoBehaviour
             {
                 inventorySprites[i].SetActive(true);
             }
-            else 
+            else if(playerInventory.Contains(correctItems[i]) == false)
             {
                 boxIcon.sprite = xMark;
                 sfxSource.PlayOneShot(audioManager.wrongPose);
