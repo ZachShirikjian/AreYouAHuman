@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class AudioManager : MonoBehaviour
 {
-    //LIST OF ALL SFX//
+    //List of all the SFX which plays during gameplay.//
     public AudioClip jump;
     public AudioClip collectItem;
     public AudioClip dropItem; 
@@ -15,15 +15,4 @@ public class AudioManager : MonoBehaviour
     public AudioClip poseResults;
     public AudioClip tenSeconds;
     public AudioClip timesUp;   
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

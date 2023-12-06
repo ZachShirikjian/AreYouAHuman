@@ -9,12 +9,15 @@ public class TitleScreen : MonoBehaviour
     public GameObject tutorialPanel; //Reference to the Tutorial panel GameObject in the TitleScreen
 
     // Start is called before the first frame update
+    //Disables the Credits and Tutorial Panel when launching the Title Screen.
     void Start()
     {
         creditsPanel.SetActive(false);
+        tutorialPanel.SetActive(false);
     }
 
-    //Loads up the SampleScene when the StartButton is pressed.
+    //Loads up the Level1 scene when the StartButton is pressed.
+    //To load a different scene, replace "Level1" with the name of your scene inside the quotes. (eg "ZachScene")
     public void StartGame()
     {
         SceneManager.LoadScene("Level1");
@@ -42,13 +45,15 @@ public class TitleScreen : MonoBehaviour
     {
         tutorialPanel.SetActive(false);
     }
-    //Exits out of the game (only works in Builds)
+
+    //Exits out of Are You Human? when the QUIT button is clicked.
     public void QuitGame()
     {
-        //Quits out of Play Mode if the Quit button is pressed 
+        //Exits Play Mode if QUIT is clicked during Play Mode (Editor).
         #if UNITY_EDITOR 
         UnityEditor.EditorApplication.isPlaying = false;
 
+        //Closes the Game if QUIT is clicked in a Build of the game.
         #endif
         Application.Quit();
     }
