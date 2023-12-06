@@ -27,6 +27,7 @@ public class InventoryItem : MonoBehaviour
     //REFERENCES//
     private GameManager gm; 
     public Sprite defaultSprite;
+    public Sprite poseSprite; //Sprite used for the final pose
 
     //VARIABLES//
     public bool alreadyAdded =false; //Checks to see if the Inventory Item was already added to the Inventory or not.

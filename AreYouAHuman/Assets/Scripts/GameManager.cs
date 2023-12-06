@@ -194,27 +194,28 @@ public class GameManager : MonoBehaviour
         for(int i = 0; i < playerInventory.Count; i++)
         {
             // inventorySprites[i].GetComponent<Image>().sprite = playerInventory[]
-            inventorySprites[i].SetActive(true);
-
-            // switch()
-            // {
-            //     case Position.Head:
-            //         inventorySprites[0].SetActive(true);
-            //         inventorySprites[0].GetComponent<SpriteRenderer>().sprite = ;
-            //         break;
-            //     case Position.Torso:
-            //         inventorySprites[1].SetActive(true);
-            //         inventorySprites[1].GetComponent<SpriteRenderer>().sprite = ;
-            //         break;
-            //     case Position.Hand:
-            //         inventorySprites[2].SetActive(true);
-            //         inventorySprites[2].GetComponent<SpriteRenderer>().sprite = ;
-            //     case Position.Pants:
-            //         inventorySprites[3].SetActive(true);
-            //         inventorySprites[3].GetComponent<SpriteRenderer>().sprite = ;
-            //     default:
-            //     break;
-            // }
+            Debug.Log(playerInventory[i].GetComponent<InventoryItem>().itemPosition);
+             switch(playerInventory[i].GetComponent<InventoryItem>().itemPosition)
+               {
+                   case Position.Head:
+                       inventorySprites[0].SetActive(true);
+                       inventorySprites[0].GetComponent<SpriteRenderer>().sprite = playerInventory[i].GetComponent<InventoryItem>().poseSprite;
+                       break;
+                   case Position.Torso:
+                       inventorySprites[1].SetActive(true);
+                        inventorySprites[1].GetComponent<SpriteRenderer>().sprite = playerInventory[i].GetComponent<InventoryItem>().poseSprite;
+                      break;
+                   case Position.Hand:
+                       inventorySprites[2].SetActive(true);
+                       inventorySprites[2].GetComponent<SpriteRenderer>().sprite = playerInventory[i].GetComponent<InventoryItem>().poseSprite;
+                    break;
+                  case Position.Pants:
+                      inventorySprites[3].SetActive(true);
+                       inventorySprites[3].GetComponent<SpriteRenderer>().sprite = playerInventory[i].GetComponent<InventoryItem>().poseSprite;
+                    break;
+                  default:
+                 break;
+               }
 
             if(playerInventory.Contains(correctItems[i]))
             {
@@ -222,8 +223,6 @@ public class GameManager : MonoBehaviour
             }
             else if(playerInventory.Contains(correctItems[i]) == false)
             {
-                // boxIcon.sprite = xMark;
-                // sfxSource.PlayOneShot(audioManager.wrongPose);
                 Debug.Log("WRRRRRROOOOOOOOOONNNNNGGG");
             }
         }
@@ -231,7 +230,7 @@ public class GameManager : MonoBehaviour
         //If the total number of correct items players got is equal or more than the correctItems list,
         //Players passed the test, so they can play the next level. 
         //Enable the Continue button and play the CorrectPose SFX.
-        if(totalItems >= correctItems.Length)
+        if(totalItems == correctItems.Length)
         {
                 continueButton.SetActive(true);
                 sfxSource.PlayOneShot(audioManager.correctPose);
@@ -242,7 +241,8 @@ public class GameManager : MonoBehaviour
         //Players failed the test, so they have to retry the current level.
         else if(totalItems < correctItems.Length)
         {
-                 boxIcon.sprite = xMark;
+                continueButton.SetActive(false);
+                boxIcon.sprite = xMark;
                 sfxSource.PlayOneShot(audioManager.wrongPose);
         }
 }

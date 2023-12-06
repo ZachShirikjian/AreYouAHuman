@@ -1174,6 +1174,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9145439098011262413, guid: 9190ad038e43141129dc5918561ed5c5, type: 3}
+      propertyPath: poseSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: e3c66a4e1b2d14e5ab7d194cbc86afc5, type: 3}
+    - target: {fileID: 9145439098011262413, guid: 9190ad038e43141129dc5918561ed5c5, type: 3}
       propertyPath: defaultSprite
       value: 
       objectReference: {fileID: 21300000, guid: e3c66a4e1b2d14e5ab7d194cbc86afc5, type: 3}
@@ -1820,7 +1824,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: e69503f9a4ac34e69a6006e16e01b4c5, type: 3}
+  m_Sprite: {fileID: 0}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -2085,6 +2089,7 @@ MonoBehaviour:
   inventorySprites:
   - {fileID: 447098448}
   - {fileID: 411219437}
+  - {fileID: 1922882796}
   - {fileID: 257802384}
   boxIcon: {fileID: 1743227679}
   checkmark: {fileID: 21300000, guid: d3416c952a502499cba396f61aa2191e, type: 3}
@@ -2710,7 +2715,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 09f04667e29b7416894522f74a40605c, type: 3}
+  m_Sprite: {fileID: 0}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -2785,7 +2790,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 0ad4587e446b54a9c999503983c991ba, type: 3}
+  m_Sprite: {fileID: 0}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -5242,6 +5247,10 @@ PrefabInstance:
       value: TiePickup
       objectReference: {fileID: 0}
     - target: {fileID: 6262814207588331304, guid: f5376cb94a40649f698ae36cc29dc5e8, type: 3}
+      propertyPath: poseSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 09f04667e29b7416894522f74a40605c, type: 3}
+    - target: {fileID: 6262814207588331304, guid: f5376cb94a40649f698ae36cc29dc5e8, type: 3}
       propertyPath: itemPosition
       value: 1
       objectReference: {fileID: 0}
@@ -5504,7 +5513,6 @@ MonoBehaviour:
   inventoryItems: []
   sfxSource: {fileID: 402561502}
   audioManager: {fileID: 402561501}
-  newCopy: {fileID: 0}
 --- !u!114 &1047412750
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7693,6 +7701,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   selectedObject: {fileID: 0}
   canInteract: 0
+  headAdded: 0
+  torsoAdded: 0
+  handAdded: 0
+  pantsAdded: 0
   interactCollider: {fileID: 1646973865}
   inventoryUI: {fileID: 1047412749}
   bodyParts:
@@ -10538,6 +10550,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1611589300}
     - target: {fileID: 4279700104106217791, guid: 0b7762565830a41719e169667847e6db, type: 3}
+      propertyPath: poseSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: e69503f9a4ac34e69a6006e16e01b4c5, type: 3}
+    - target: {fileID: 4279700104106217791, guid: 0b7762565830a41719e169667847e6db, type: 3}
       propertyPath: itemPosition
       value: 3
       objectReference: {fileID: 0}
@@ -10602,6 +10618,10 @@ PrefabInstance:
       propertyPath: icon
       value: 
       objectReference: {fileID: 5805532}
+    - target: {fileID: 9145439098011262413, guid: da835e95c26bc47c28122704fd58b5ed, type: 3}
+      propertyPath: poseSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 0ad4587e446b54a9c999503983c991ba, type: 3}
     - target: {fileID: 9145439098011262413, guid: da835e95c26bc47c28122704fd58b5ed, type: 3}
       propertyPath: defaultSprite
       value: 

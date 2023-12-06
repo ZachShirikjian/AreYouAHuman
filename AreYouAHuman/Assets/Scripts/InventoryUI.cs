@@ -17,8 +17,6 @@ public class InventoryUI : MonoBehaviour
     public List<InventoryItem> inventoryItems = new List<InventoryItem>();
     public AudioSource sfxSource;
     public AudioManager audioManager;
-    public GameObject newCopy;
-
     //At the start of the level, clear all of the Inventory Slots
     void Start()
     {
@@ -86,27 +84,29 @@ public class InventoryUI : MonoBehaviour
         if(gm.playerInventory.Count > 0)
         {
             Debug.Log("REMOVAL SUCCESSFUL");
-            // newCopy = Instantiate(item.gameObject,player.transform.position, Quaternion.identity);
-            // newCopy.SetActive(true);
             item.gameObject.SetActive(true);
             item.gameObject.transform.position = player.transform.position;
             switch(item.itemPosition)
             {
                 case Position.Head:
                     playerInteractScript.bodyParts[0].GetComponent<SpriteRenderer>().enabled = true; 
-                     playerInteractScript.bodyParts[0].GetComponent<SpriteRenderer>().sprite = item.defaultSprite;
+                     playerInteractScript.bodyParts[0].GetComponent<SpriteRenderer>().sprite = null;
+                     playerInteractScript.headAdded = false;
                 break;
                 case Position.Torso:
                      playerInteractScript.bodyParts[1].GetComponent<SpriteRenderer>().enabled = true; 
-                     playerInteractScript.bodyParts[1].GetComponent<SpriteRenderer>().sprite = item.defaultSprite;
+                     playerInteractScript.bodyParts[1].GetComponent<SpriteRenderer>().sprite = null;
+                     playerInteractScript.torsoAdded = false;
                 break;
                 case Position.Hand:
                      playerInteractScript.bodyParts[2].GetComponent<SpriteRenderer>().enabled = true; 
-                     playerInteractScript.bodyParts[2].GetComponent<SpriteRenderer>().sprite = item.defaultSprite;
+                     playerInteractScript.bodyParts[2].GetComponent<SpriteRenderer>().sprite = null;
+                     playerInteractScript.handAdded = false;
                 break;
                 case Position.Pants:
                      playerInteractScript.bodyParts[3].GetComponent<SpriteRenderer>().enabled = true; 
-                     playerInteractScript.bodyParts[3].GetComponent<SpriteRenderer>().sprite = item.defaultSprite;
+                     playerInteractScript.bodyParts[3].GetComponent<SpriteRenderer>().sprite = null;
+                     playerInteractScript.pantsAdded = false;   
                 break;
                 default:
                 break;
@@ -115,20 +115,5 @@ public class InventoryUI : MonoBehaviour
             gm.playerInventory.Remove(item.gameObject);
             gm.itemsCollected--;
         }
-
-
-        //Places the original item back into the scene 
-        // for(int i = 0; i < slots.Length; i++)
-        // {
-        //         // if(inventoryItems[i].alreadyAdded == true)
-        //         // {
-        //         //     Debug.Log("CAN'T ADD RIP");
-        //         // }
-        //         if(inventoryItems[i].alreadyAdded == true)
-        //         {
-        //             Debug.Log("REMOVE ITEM");
-        //             slots[i].ClearSlot();
-        //         }
-        // }
     }
 }
