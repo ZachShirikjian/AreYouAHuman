@@ -199,19 +199,19 @@ public class GameManager : MonoBehaviour
                {
                    case Position.Head:
                        inventorySprites[0].SetActive(true);
-                       inventorySprites[0].GetComponent<SpriteRenderer>().sprite = playerInventory[i].GetComponent<InventoryItem>().poseSprite;
+                       inventorySprites[0].GetComponent<Image>().sprite = playerInventory[i].GetComponent<InventoryItem>().poseSprite;
                        break;
                    case Position.Torso:
                        inventorySprites[1].SetActive(true);
-                        inventorySprites[1].GetComponent<SpriteRenderer>().sprite = playerInventory[i].GetComponent<InventoryItem>().poseSprite;
+                        inventorySprites[1].GetComponent<Image>().sprite = playerInventory[i].GetComponent<InventoryItem>().poseSprite;
                       break;
                    case Position.Hand:
                        inventorySprites[2].SetActive(true);
-                       inventorySprites[2].GetComponent<SpriteRenderer>().sprite = playerInventory[i].GetComponent<InventoryItem>().poseSprite;
+                       inventorySprites[2].GetComponent<Image>().sprite = playerInventory[i].GetComponent<InventoryItem>().poseSprite;
                     break;
                   case Position.Pants:
                       inventorySprites[3].SetActive(true);
-                       inventorySprites[3].GetComponent<SpriteRenderer>().sprite = playerInventory[i].GetComponent<InventoryItem>().poseSprite;
+                       inventorySprites[3].GetComponent<Image>().sprite = playerInventory[i].GetComponent<InventoryItem>().poseSprite;
                     break;
                   default:
                  break;
