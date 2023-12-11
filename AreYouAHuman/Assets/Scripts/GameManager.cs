@@ -79,17 +79,17 @@ public class GameManager : MonoBehaviour
 
         //Increases the Max Inventory Items you can carry depending on the Level you're currently on. 
 
-        //Level 1
-        if(currentScene == 1) 
-        {
-            maxInventoryItems = 3;
-        }
+        // //Level 1
+        // if(currentScene == 1) 
+        // {
+        //     maxInventoryItems = 3;
+        // }
 
-        //Level 2
-        else if(currentScene == 2)
-        {
-            maxInventoryItems = 4;
-        }
+        // //Level 2
+        // else if(currentScene == 2)
+        // {
+        //     maxInventoryItems = 4;
+        // }
 
         //Disable all the InventorySprites before they are used in the ComparePose() method.
         for(int i = 0; i < inventorySprites.Length; i++)
@@ -202,7 +202,7 @@ public class GameManager : MonoBehaviour
                        inventorySprites[0].GetComponent<Image>().sprite = playerInventory[i].GetComponent<InventoryItem>().poseSprite;
                        break;
                    case Position.Torso:
-                       inventorySprites[1].SetActive(true);
+                        inventorySprites[1].SetActive(true);
                         inventorySprites[1].GetComponent<Image>().sprite = playerInventory[i].GetComponent<InventoryItem>().poseSprite;
                       break;
                    case Position.Hand:
