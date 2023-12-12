@@ -12,7 +12,7 @@ using UnityEngine.UI;
     {
         Head, 
         Torso, 
-        Hand, 
+        Accessory, 
         Pants
     }
 

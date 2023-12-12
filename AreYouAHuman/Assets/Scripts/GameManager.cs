@@ -205,7 +205,7 @@ public class GameManager : MonoBehaviour
                         inventorySprites[1].SetActive(true);
                         inventorySprites[1].GetComponent<Image>().sprite = playerInventory[i].GetComponent<InventoryItem>().poseSprite;
                       break;
-                   case Position.Hand:
+                   case Position.Accessory:
                        inventorySprites[2].SetActive(true);
                        inventorySprites[2].GetComponent<Image>().sprite = playerInventory[i].GetComponent<InventoryItem>().poseSprite;
                     break;

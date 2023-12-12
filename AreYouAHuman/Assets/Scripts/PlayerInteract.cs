@@ -76,8 +76,8 @@ public class PlayerInteract : MonoBehaviour
                 bodyParts[1].GetComponent<SpriteRenderer>().sprite = selectedObject.GetComponent<InventoryItem>().defaultSprite;
                 torsoAdded = true;
                 break;
-            case Position.Hand:
-                Debug.Log("PROP ON HAND");
+            case Position.Accessory:
+                Debug.Log("ACCESSORY COLLECTED");
                 bodyParts[2].GetComponent<SpriteRenderer>().enabled = true; 
                 bodyParts[2].GetComponent<SpriteRenderer>().sprite = selectedObject.GetComponent<InventoryItem>().defaultSprite;
                 handAdded = true;

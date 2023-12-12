@@ -5363,7 +5363,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 45ea5447e0c424d51b15ce7459e77f94, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 8b2c3ff4093f9468ca879f73e04cff7d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -9803,7 +9803,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 1954d86e2bed64af284cc4489d30e91b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 6367c7d69c2704d62a04169f780cf16e, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -11117,6 +11117,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: ShirtPickup
       objectReference: {fileID: 0}
+    - target: {fileID: 2538525813674471058, guid: e5b8f3d1648424905b78fe2af918a104, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: c420f60b3dee7491abff8ec9a01151af, type: 3}
+    - target: {fileID: 8078198341161417685, guid: e5b8f3d1648424905b78fe2af918a104, type: 3}
+      propertyPath: defaultSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: c420f60b3dee7491abff8ec9a01151af, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

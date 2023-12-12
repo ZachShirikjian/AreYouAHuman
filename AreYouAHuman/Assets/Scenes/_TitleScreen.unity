@@ -2811,7 +2811,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\xA92023 Zach Shirikjian/Artists for Humanity."
+  m_text: "\xA92023 Zach Shirikjian/Artists for Humanity\nAll Rights Reserved."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 2964bdc6b973047e19a9421af4d229b3, type: 2}
   m_sharedMaterial: {fileID: 3882437579797245757, guid: 2964bdc6b973047e19a9421af4d229b3, type: 2}
@@ -5045,7 +5045,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: c8fd11f9f90174ee28b6f04353960da7, type: 3}
+  m_Sprite: {fileID: 21300000, guid: bce0eec55106c4978a340c54c4928475, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
