@@ -76,6 +76,7 @@ public class GameManager : MonoBehaviour
         continueButton.SetActive(false);
         pauseMenu.SetActive(false);
         currentScene = SceneManager.GetActiveScene().buildIndex;
+        Time.timeScale = 1f;
 
         //Increases the Max Inventory Items you can carry depending on the Level you're currently on. 
 
