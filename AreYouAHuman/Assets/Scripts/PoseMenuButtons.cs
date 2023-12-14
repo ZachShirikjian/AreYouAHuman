@@ -4,16 +4,26 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 public class PoseMenuButtons : MonoBehaviour
 {
+
+    //VARIABLES//
+    //The index of the current scene players are on 
+    public int currentScene; 
+
+    //Every time a new scene is loaded, make sure the currentScene index is = to the buildIndex of the scene
+    void Start()
+    {
+        currentScene = SceneManager.GetActiveScene().buildIndex;
+    }
     //Reloads the current level from the beginning 
     public void RestartLevel()
     {
-        SceneManager.LoadScene("Level1");
+        SceneManager.LoadScene(currentScene);
     }
 
     //Continues onto the next level, if the player got the pose correct
     public void NextLevel()
     {
-        SceneManager.LoadScene("Cutscene");
+        SceneManager.LoadScene(currentScene + 1);
     }
 
     //Exits back to the Title Screen

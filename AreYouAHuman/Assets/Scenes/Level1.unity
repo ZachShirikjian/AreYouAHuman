@@ -2751,7 +2751,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2848703083232656897, guid: 9190ad038e43141129dc5918561ed5c5, type: 3}
       propertyPath: m_IsTrigger
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2848703083232656897, guid: 9190ad038e43141129dc5918561ed5c5, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.x
@@ -5772,6 +5772,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae31dc8691b274974aa032f61ae81efb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentScene: 0
 --- !u!114 &1047412751
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8587,9 +8588,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 2a0a9b85ece5a400a8d23ce9874e5589, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 80d0c9d9e72a64fcfbcab99319e1a448, type: 3}
   m_Type: 0
-  m_PreserveAspect: 0
+  m_PreserveAspect: 1
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1
@@ -9964,7 +9965,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 6367c7d69c2704d62a04169f780cf16e, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 613d285cf33244a9cbb917129fc4e015, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -11062,7 +11063,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3870065485254825142, guid: 0b7762565830a41719e169667847e6db, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 24
+      value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 3870065485254825142, guid: 0b7762565830a41719e169667847e6db, type: 3}
       propertyPath: m_LocalPosition.y
