@@ -1,0 +1,77 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &4816871062669655519
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4949408476304455841}
+  - component: {fileID: 4253382149501692093}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4949408476304455841
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4816871062669655519}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4253382149501692093
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4816871062669655519}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e14d81d24cd1442a3bf649327763021a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timerRunning: 1
+  timer: 60
+  interactPrompt: {fileID: 0}
+  interactText: {fileID: 0}
+  playerInventory: []
+  inventory: {fileID: 0}
+  maxInventoryItems: 4
+  itemsCollected: 0
+  correctItems:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  currentStateText: {fileID: 0}
+  timerText: {fileID: 0}
+  pauseMenu: {fileID: 0}
+  posePanel: {fileID: 0}
+  playerPose: {fileID: 0}
+  inventorySprites:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  boxIcon: {fileID: 0}
+  checkmark: {fileID: 21300000, guid: d3416c952a502499cba396f61aa2191e, type: 3}
+  xMark: {fileID: 21300000, guid: 408dff40e2eef4db89580dc80c239e23, type: 3}
+  submitButton: {fileID: 0}
+  continueButton: {fileID: 0}
+  audioManager: {fileID: 0}
+  sfxSource: {fileID: 0}
+  musicSource: {fileID: 0}

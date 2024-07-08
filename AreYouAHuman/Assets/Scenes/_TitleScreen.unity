@@ -157,8 +157,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 204, y: -165}
-  m_SizeDelta: {x: 200, y: 50}
+  m_AnchoredPosition: {x: 0, y: -214}
+  m_SizeDelta: {x: 500, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &55017030
 MonoBehaviour:
@@ -180,7 +180,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "DEVELOPMENT \nTEAM"
+  m_text: DEVELOPMENT TEAM
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 32c94ba1a14aa4775a2662ea71c76a70, type: 2}
   m_sharedMaterial: {fileID: 516067174558235671, guid: 32c94ba1a14aa4775a2662ea71c76a70, type: 2}
@@ -189,8 +189,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 4294935364
+  m_fontColor: {r: 0.26666668, g: 0.5137255, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -449,7 +449,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: ADDITIONAL AUDIO PROVIDED BY
+  m_text: ALL AUDIO PROVIDED BY
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 2964bdc6b973047e19a9421af4d229b3, type: 2}
   m_sharedMaterial: {fileID: 3882437579797245757, guid: 2964bdc6b973047e19a9421af4d229b3, type: 2}
@@ -595,7 +595,7 @@ MonoBehaviour:
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 1920, y: 1080}
   m_ScreenMatchMode: 0
-  m_MatchWidthOrHeight: 0
+  m_MatchWidthOrHeight: 1
   m_PhysicalUnit: 3
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
@@ -641,10 +641,10 @@ RectTransform:
   - {fileID: 506582078}
   - {fileID: 2100535138}
   - {fileID: 2116617867}
-  - {fileID: 317406684}
-  - {fileID: 753935211}
   - {fileID: 1569175058}
+  - {fileID: 753935211}
   - {fileID: 1249095090}
+  - {fileID: 317406684}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -729,7 +729,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 5334ca21acc02418c83496f2fb6153d3, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 01c9cb206b8a53847b6b16157ce14c33, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -894,7 +894,7 @@ GameObject:
   - component: {fileID: 343655881}
   - component: {fileID: 343655880}
   m_Layer: 5
-  m_Name: PLAYTESTERS
+  m_Name: LEVEL DESIGNERS
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -940,7 +940,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: PLAYTESTERS
+  m_text: LEVEL DESIGNERS
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 2964bdc6b973047e19a9421af4d229b3, type: 2}
   m_sharedMaterial: {fileID: 3882437579797245757, guid: 2964bdc6b973047e19a9421af4d229b3, type: 2}
@@ -1530,11 +1530,11 @@ RectTransform:
   - {fileID: 1652579091}
   m_Father: {fileID: 191769381}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -34.5, y: -449.99997}
+  m_AnchorMin: {x: 0.5, y: 0}
+  m_AnchorMax: {x: 0.5, y: 0}
+  m_AnchoredPosition: {x: -24, y: 52}
   m_SizeDelta: {x: 99, y: 99}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_Pivot: {x: 0.5, y: 0}
 --- !u!114 &506582079
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1686,7 +1686,7 @@ GameObject:
   - component: {fileID: 557558102}
   - component: {fileID: 557558101}
   m_Layer: 5
-  m_Name: Logo (1)
+  m_Name: Logo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1701,14 +1701,14 @@ RectTransform:
   m_GameObject: {fileID: 557558099}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.15, y: 0.15, z: 1}
+  m_LocalScale: {x: 0.1, y: 0.1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2116617867}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: -168, y: -170}
+  m_AnchoredPosition: {x: 0, y: -100}
   m_SizeDelta: {x: 2506, y: 1489.1611}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &557558101
@@ -1912,7 +1912,7 @@ GameObject:
   - component: {fileID: 651732590}
   - component: {fileID: 651732589}
   m_Layer: 5
-  m_Name: PROGRAMMERS
+  m_Name: PROGRAMMER
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1958,7 +1958,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: PROGRAMMERS
+  m_text: PROGRAMMER
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 2964bdc6b973047e19a9421af4d229b3, type: 2}
   m_sharedMaterial: {fileID: 3882437579797245757, guid: 2964bdc6b973047e19a9421af4d229b3, type: 2}
@@ -2102,7 +2102,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 164, y: 86}
+  m_AnchoredPosition: {x: 232, y: 105}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0, y: 0}
 --- !u!114 &753935212
@@ -2262,11 +2262,11 @@ RectTransform:
   - {fileID: 468215615}
   m_Father: {fileID: 191769381}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -158.8, y: -449.99997}
+  m_AnchorMin: {x: 0.5, y: 0}
+  m_AnchorMax: {x: 0.5, y: 0}
+  m_AnchoredPosition: {x: -150, y: 52}
   m_SizeDelta: {x: 99, y: 99}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_Pivot: {x: 0.5, y: 0}
 --- !u!114 &932165030
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2418,7 +2418,7 @@ GameObject:
   - component: {fileID: 945024723}
   - component: {fileID: 945024722}
   m_Layer: 5
-  m_Name: Serenity
+  m_Name: Zach
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2463,9 +2463,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Zach Shirikjian
-
-    Serenity Williams'
+  m_text: Zach Shirikjian
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 71b1854d172944f34a9755df9b550842, type: 2}
   m_sharedMaterial: {fileID: 8169324763682313112, guid: 71b1854d172944f34a9755df9b550842, type: 2}
@@ -2600,7 +2598,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 5334ca21acc02418c83496f2fb6153d3, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 480ac0aae16d01c42b5ba248fbd89ee9, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -2788,7 +2786,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 34, y: 23}
+  m_AnchoredPosition: {x: 65, y: 28.99997}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0, y: 0}
 --- !u!114 &1249095091
@@ -2811,7 +2809,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\xA92023 Zach Shirikjian/Artists for Humanity\nAll Rights Reserved."
+  m_text: "\xA92023-2024 Zach Shirikjian/Artists for Humanity\nAll Rights Reserved."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 2964bdc6b973047e19a9421af4d229b3, type: 2}
   m_sharedMaterial: {fileID: 3882437579797245757, guid: 2964bdc6b973047e19a9421af4d229b3, type: 2}
@@ -2838,8 +2836,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 24
-  m_fontSizeBase: 24
+  m_fontSize: 20
+  m_fontSizeBase: 20
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -2922,11 +2920,11 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 191769381}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 200, y: -455}
+  m_AnchorMin: {x: 0.5, y: 0}
+  m_AnchorMax: {x: 0.5, y: 0}
+  m_AnchoredPosition: {x: 246.4, y: 37.5}
   m_SizeDelta: {x: 388, y: 122}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_Pivot: {x: 0.5, y: 0}
 --- !u!114 &1296211977
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3659,7 +3657,7 @@ GameObject:
   - component: {fileID: 1489925039}
   - component: {fileID: 1489925038}
   m_Layer: 5
-  m_Name: TBDPlaytesters
+  m_Name: TBD
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3704,7 +3702,27 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 
+  m_text: 'Zach Shirikjian
+
+    ?
+
+    ?
+
+    ?
+
+    ?
+
+    ?
+
+    ?
+
+    ?
+
+    ?
+
+    ?
+
+    ?'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 71b1854d172944f34a9755df9b550842, type: 2}
   m_sharedMaterial: {fileID: 8169324763682313112, guid: 71b1854d172944f34a9755df9b550842, type: 2}
@@ -3839,7 +3857,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: CHARACTER ARTIST/ANIMATOR
+  m_text: CHARACTER DESIGNER
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 2964bdc6b973047e19a9421af4d229b3, type: 2}
   m_sharedMaterial: {fileID: 3882437579797245757, guid: 2964bdc6b973047e19a9421af4d229b3, type: 2}
@@ -3950,8 +3968,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 30, y: 84}
-  m_SizeDelta: {x: 100, y: 100}
+  m_AnchoredPosition: {x: 61, y: 103.899994}
+  m_SizeDelta: {x: 150, y: 150}
   m_Pivot: {x: 0, y: 0}
 --- !u!114 &1569175059
 MonoBehaviour:
@@ -3973,9 +3991,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: aa6c899f13f57447aa49e29ab3da30dc, type: 3}
+  m_Sprite: {fileID: 21300000, guid: b313977cca76861429509805aa1b4fd4, type: 3}
   m_Type: 0
-  m_PreserveAspect: 0
+  m_PreserveAspect: 1
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1
@@ -4245,7 +4263,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
   m_AnchoredPosition: {x: -150, y: -125}
-  m_SizeDelta: {x: 200, y: 50}
+  m_SizeDelta: {x: 800, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1626632784
 MonoBehaviour:
@@ -4294,8 +4312,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 64
-  m_fontSizeBase: 64
+  m_fontSize: 128
+  m_fontSizeBase: 128
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -4505,14 +4523,14 @@ RectTransform:
   m_GameObject: {fileID: 1726017318}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.12, y: 0.12, z: 1}
+  m_LocalScale: {x: 0.1, y: 0.1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 317406684}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 200, y: -28}
+  m_AnchoredPosition: {x: 400, y: -40}
   m_SizeDelta: {x: 2506, y: 1489.1611}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &1726017320
@@ -4888,7 +4906,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -18, y: -90}
+  m_AnchoredPosition: {x: -16, y: -88}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1922794952
@@ -5480,11 +5498,11 @@ RectTransform:
   - {fileID: 1922794951}
   m_Father: {fileID: 191769381}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -275, y: -451.99997}
+  m_AnchorMin: {x: 0.5, y: 0}
+  m_AnchorMax: {x: 0.5, y: 0}
+  m_AnchoredPosition: {x: -260, y: 50}
   m_SizeDelta: {x: 99, y: 99}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_Pivot: {x: 0.5, y: 0}
 --- !u!114 &2100535139
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5641,7 +5659,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &2116617867
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5721,7 +5739,7 @@ GameObject:
   - component: {fileID: 2135047477}
   - component: {fileID: 2135047476}
   m_Layer: 5
-  m_Name: Serenity
+  m_Name: SpecialThanks
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5766,7 +5784,16 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Artists for Humanity
+  m_text: 'Handy Dorceus
+
+    Artists for Humanity
+
+    Boston Cyberarts
+
+    Fitchburg
+    State University
+
+'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 71b1854d172944f34a9755df9b550842, type: 2}
   m_sharedMaterial: {fileID: 8169324763682313112, guid: 71b1854d172944f34a9755df9b550842, type: 2}

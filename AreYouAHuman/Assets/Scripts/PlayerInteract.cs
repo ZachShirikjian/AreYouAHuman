@@ -94,27 +94,64 @@ public class PlayerInteract : MonoBehaviour
     }
 
 
+    //When the Player (Zort) is inside of the Trigger Collider of a Prop GameObject,
+    //If the Player has room in their Inventory, 
+    //Enable the InteractPrompt UI
+
+
     public void OnTriggerEnter2D(Collider2D other)
     {
         if(other.gameObject.tag == "Prop")
         {
+            //If there is enough space in a player's inventory,
+            //Allow the player to pickup an item.
             if(gm.playerInventory.Count < gm.maxInventoryItems)
             {
                     selectedObject = other.gameObject;
-                    if(selectedObject.GetComponent<InventoryItem>().itemPosition == Position.Head && headAdded == true)
-                    {
-                        Debug.Log("SLOT ALREADY TAKEN, PLEASE DROP");
-                        gm.interactText.text = selectedObject.GetComponent<InventoryItem>().itemPosition.ToString() + " already taken. Please drop.";
-                        canInteract = false;
-                    }
-                    else
-                    {
+
+                //If the Player doesn't have room in their Inventory
+                //Prompt the User to remove an item from that slot in the UI.
+
+                //Check the Position of where an Item goes on the Player's body.
+                //If an item was already added to that space
+                if (selectedObject.GetComponent<InventoryItem>().itemPosition == Position.Head && headAdded == true)
+                {
+                    Debug.Log("HEAD ALREADY TAKEN, PLEASE DROP");
+                    gm.interactText.text = selectedObject.GetComponent<InventoryItem>().itemPosition.ToString() + " already taken. Please drop.";
+                    canInteract = false;
+                }
+
+                else if (selectedObject.GetComponent<InventoryItem>().itemPosition == Position.Accessory && handAdded == true)
+                {
+                    Debug.Log("ACCESSORY ALREADY TAKEN, PLEASE DROP");
+                    gm.interactText.text = selectedObject.GetComponent<InventoryItem>().itemPosition.ToString() + " already taken. Please drop.";
+                    canInteract = false;
+                }
+
+                if (selectedObject.GetComponent<InventoryItem>().itemPosition == Position.Torso && torsoAdded == true)
+                {
+                    Debug.Log("TORSO ALREADY TAKEN, PLEASE DROP");
+                    gm.interactText.text = selectedObject.GetComponent<InventoryItem>().itemPosition.ToString() + " already taken. Please drop.";
+                    canInteract = false;
+                }
+
+                if (selectedObject.GetComponent<InventoryItem>().itemPosition == Position.Pants && pantsAdded == true)
+                {
+                    Debug.Log("PANTS ALREADY TAKEN, PLEASE DROP");
+                    gm.interactText.text = selectedObject.GetComponent<InventoryItem>().itemPosition.ToString() + " already taken. Please drop.";
+                    canInteract = false;
+                }
+                else
+                {
                         Debug.Log("CAN PICKUP PROP");
-                        gm.interactText.text = "Pick up";
+                        gm.interactText.text = "Collect";
                         gm.interactPrompt.SetActive(true);
                         canInteract = true;
-                    }
+                }
             }
+
+            //If the Player's current Inventory is greater or equal to the Maximum amount of items in your Inventory
+            //Indicate that the Inventory is Full
             else if(gm.playerInventory.Count >= gm.maxInventoryItems)
             {
                 Debug.Log("CAN'T PICKUP PROP");
