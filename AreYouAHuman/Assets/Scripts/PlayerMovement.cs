@@ -10,9 +10,11 @@ public class PlayerMovement : MonoBehaviour
     private float jumpPower = 30f;
     private bool IsFacingRight = true;
 
-    //REFERENCES//
+    //Use public variables to test values for testing
 
+    //REFERENCES//
     //The Player's Rigidbody2D, which handles all of its physics (movement, collision, etc.)
+    //Visibility (Public/Private) Type Name 
     private Rigidbody2D rb2d;
 
     //The GroundCheck Transform attached as a Child to Zort to see if the Player is on the Ground or not.

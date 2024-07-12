@@ -2732,6 +2732,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &1759848870 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3895661664092878689, guid: fbae7ddae6ecde740abec620e7c5cc37, type: 3}
+  m_PrefabInstance: {fileID: 2241659414897129701}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &1802181843 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5641648826530093053, guid: 3a901c51de419944fbfca0606f80066b, type: 3}
@@ -3595,6 +3600,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 402561502}
     - target: {fileID: 1128831772196719818, guid: fbae7ddae6ecde740abec620e7c5cc37, type: 3}
+      propertyPath: groundCheck
+      value: 
+      objectReference: {fileID: 1759848870}
+    - target: {fileID: 1128831772196719818, guid: fbae7ddae6ecde740abec620e7c5cc37, type: 3}
       propertyPath: audioManager
       value: 
       objectReference: {fileID: 402561501}
@@ -3605,6 +3614,14 @@ PrefabInstance:
     - target: {fileID: 7794983518084179851, guid: fbae7ddae6ecde740abec620e7c5cc37, type: 3}
       propertyPath: m_Name
       value: Zort
+      objectReference: {fileID: 0}
+    - target: {fileID: 9143340866720915396, guid: fbae7ddae6ecde740abec620e7c5cc37, type: 3}
+      propertyPath: m_Size.x
+      value: 2.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 9143340866720915396, guid: fbae7ddae6ecde740abec620e7c5cc37, type: 3}
+      propertyPath: m_Size.y
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
