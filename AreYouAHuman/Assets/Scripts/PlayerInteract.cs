@@ -13,6 +13,11 @@ public class PlayerInteract : MonoBehaviour
     public bool torsoAdded = false;
     public bool handAdded = false;
     public bool pantsAdded = false;
+    public bool shoesAdded = false;
+    public bool hatAdded = false;
+    public bool shortsAdded = false;
+    public bool jacketAdded = false;
+
 
     //REFERENCES//
     public BoxCollider2D interactCollider; //Reference to Player's Interact Collider (separate GameObject)
@@ -20,7 +25,7 @@ public class PlayerInteract : MonoBehaviour
     public InventoryUI inventoryUI; //Reference to inventoryUI script 
 
     //LIST OF ALL THE BODY PARTS PROPS CAN BE PUT ON 
-    public GameObject[] bodyParts = new GameObject[4]; 
+    public GameObject[] bodyParts = new GameObject[8]; 
 
 
     // Start is called before the first frame update
@@ -31,6 +36,10 @@ public class PlayerInteract : MonoBehaviour
         torsoAdded = false;
         handAdded = false;
         pantsAdded = false;
+        shoesAdded = false;
+        hatAdded = false;
+        shortsAdded = false;
+        jacketAdded = false;
     }
 
     // Update is called once per frame
@@ -88,6 +97,30 @@ public class PlayerInteract : MonoBehaviour
                 bodyParts[3].GetComponent<SpriteRenderer>().sprite = selectedObject.GetComponent<InventoryItem>().defaultSprite;
                 pantsAdded = true;
                 break;
+            case Position.Shoes:
+                Debug.Log("PROP ON SHOES");
+                bodyParts[4].GetComponent<SpriteRenderer>().enabled = true;
+                bodyParts[4].GetComponent<SpriteRenderer>().sprite = selectedObject.GetComponent<InventoryItem>().defaultSprite;
+                shoesAdded = true;
+                break;
+            case Position.Hat:
+                Debug.Log("ACCESSORY COLLECTED");
+                bodyParts[5].GetComponent<SpriteRenderer>().enabled = true;
+                bodyParts[5].GetComponent<SpriteRenderer>().sprite = selectedObject.GetComponent<InventoryItem>().defaultSprite;
+                hatAdded = true;
+                break;
+            case Position.Shorts:
+                Debug.Log("PROP ON PANTS");
+                bodyParts[6].GetComponent<SpriteRenderer>().enabled = true;
+                bodyParts[6].GetComponent<SpriteRenderer>().sprite = selectedObject.GetComponent<InventoryItem>().defaultSprite;
+                shortsAdded = true;
+                break;
+            case Position.Jacket:
+                Debug.Log("PROP ON SHOES");
+                bodyParts[7].GetComponent<SpriteRenderer>().enabled = true;
+                bodyParts[7].GetComponent<SpriteRenderer>().sprite = selectedObject.GetComponent<InventoryItem>().defaultSprite;
+                jacketAdded = true;
+                break;
             default:
             break;
         }
@@ -128,19 +161,48 @@ public class PlayerInteract : MonoBehaviour
                     canInteract = false;
                 }
 
-                if (selectedObject.GetComponent<InventoryItem>().itemPosition == Position.Torso && torsoAdded == true)
+                else if (selectedObject.GetComponent<InventoryItem>().itemPosition == Position.Torso && torsoAdded == true)
                 {
                     Debug.Log("TORSO ALREADY TAKEN, PLEASE DROP");
                     gm.interactText.text = selectedObject.GetComponent<InventoryItem>().itemPosition.ToString() + " already taken. Please drop.";
                     canInteract = false;
                 }
 
-                if (selectedObject.GetComponent<InventoryItem>().itemPosition == Position.Pants && pantsAdded == true)
+                else if (selectedObject.GetComponent<InventoryItem>().itemPosition == Position.Pants && pantsAdded == true)
                 {
                     Debug.Log("PANTS ALREADY TAKEN, PLEASE DROP");
                     gm.interactText.text = selectedObject.GetComponent<InventoryItem>().itemPosition.ToString() + " already taken. Please drop.";
                     canInteract = false;
                 }
+
+                else if (selectedObject.GetComponent<InventoryItem>().itemPosition == Position.Shoes && shoesAdded == true)
+                {
+                    Debug.Log("SHOES ALREADY TAKEN, PLEASE DROP");
+                    gm.interactText.text = selectedObject.GetComponent<InventoryItem>().itemPosition.ToString() + " already taken. Please drop.";
+                    canInteract = false;
+                }
+               
+                else if (selectedObject.GetComponent<InventoryItem>().itemPosition == Position.Hat && hatAdded == true)
+                {
+                    Debug.Log("HAT ALREADY TAKEN, PLEASE DROP");
+                    gm.interactText.text = selectedObject.GetComponent<InventoryItem>().itemPosition.ToString() + " already taken. Please drop.";
+                    canInteract = false;
+                }
+
+                else if (selectedObject.GetComponent<InventoryItem>().itemPosition == Position.Shorts && shortsAdded == true)
+                {
+                    Debug.Log("SHORTS/BELT ALREADY TAKEN, PLEASE DROP");
+                    gm.interactText.text = selectedObject.GetComponent<InventoryItem>().itemPosition.ToString() + " already taken. Please drop.";
+                    canInteract = false;
+                }
+
+                else if (selectedObject.GetComponent<InventoryItem>().itemPosition == Position.Jacket && jacketAdded == true)
+                {
+                    Debug.Log("JACKET ALREADY TAKEN, PLEASE DROP");
+                    gm.interactText.text = selectedObject.GetComponent<InventoryItem>().itemPosition.ToString() + " already taken. Please drop.";
+                    canInteract = false;
+                }
+
                 else
                 {
                         Debug.Log("CAN PICKUP PROP");

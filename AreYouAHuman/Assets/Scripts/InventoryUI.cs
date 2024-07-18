@@ -108,6 +108,26 @@ public class InventoryUI : MonoBehaviour
                      playerInteractScript.bodyParts[3].GetComponent<SpriteRenderer>().sprite = null;
                      playerInteractScript.pantsAdded = false;   
                 break;
+                case Position.Shoes:
+                    playerInteractScript.bodyParts[4].GetComponent<SpriteRenderer>().enabled = true;
+                    playerInteractScript.bodyParts[4].GetComponent<SpriteRenderer>().sprite = null;
+                    playerInteractScript.shoesAdded = false;
+                break;
+                case Position.Hat:
+                    playerInteractScript.bodyParts[5].GetComponent<SpriteRenderer>().enabled = true;
+                    playerInteractScript.bodyParts[5].GetComponent<SpriteRenderer>().sprite = null;
+                    playerInteractScript.hatAdded = false;
+                    break;
+                case Position.Shorts:
+                    playerInteractScript.bodyParts[6].GetComponent<SpriteRenderer>().enabled = true;
+                    playerInteractScript.bodyParts[6].GetComponent<SpriteRenderer>().sprite = null;
+                    playerInteractScript.shortsAdded = false;
+                    break;
+                case Position.Jacket:
+                    playerInteractScript.bodyParts[7].GetComponent<SpriteRenderer>().enabled = true;
+                    playerInteractScript.bodyParts[7].GetComponent<SpriteRenderer>().sprite = null;
+                    playerInteractScript.jacketAdded = false;
+                    break;
                 default:
                 break;
             }
