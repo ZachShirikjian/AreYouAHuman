@@ -128,14 +128,14 @@ public class PlayerInteract : MonoBehaviour
                     canInteract = false;
                 }
 
-                if (selectedObject.GetComponent<InventoryItem>().itemPosition == Position.Torso && torsoAdded == true)
+                else if (selectedObject.GetComponent<InventoryItem>().itemPosition == Position.Torso && torsoAdded == true)
                 {
                     Debug.Log("TORSO ALREADY TAKEN, PLEASE DROP");
                     gm.interactText.text = selectedObject.GetComponent<InventoryItem>().itemPosition.ToString() + " already taken. Please drop.";
                     canInteract = false;
                 }
 
-                if (selectedObject.GetComponent<InventoryItem>().itemPosition == Position.Pants && pantsAdded == true)
+                else if (selectedObject.GetComponent<InventoryItem>().itemPosition == Position.Pants && pantsAdded == true)
                 {
                     Debug.Log("PANTS ALREADY TAKEN, PLEASE DROP");
                     gm.interactText.text = selectedObject.GetComponent<InventoryItem>().itemPosition.ToString() + " already taken. Please drop.";
