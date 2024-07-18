@@ -13,7 +13,8 @@ using UnityEngine.UI;
         Head, 
         Torso, 
         Accessory, 
-        Pants
+        Pants,
+        Hand
     }
 
 public class InventoryItem : MonoBehaviour
