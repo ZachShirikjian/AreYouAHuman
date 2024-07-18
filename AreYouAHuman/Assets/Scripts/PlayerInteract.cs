@@ -107,7 +107,8 @@ public class PlayerInteract : MonoBehaviour
             //Allow the player to pickup an item.
             if(gm.playerInventory.Count < gm.maxInventoryItems)
             {
-                    selectedObject = other.gameObject;
+
+                selectedObject = other.gameObject;
 
                 //If the Player doesn't have room in their Inventory
                 //Prompt the User to remove an item from that slot in the UI.
@@ -121,6 +122,7 @@ public class PlayerInteract : MonoBehaviour
                     canInteract = false;
                 }
 
+                
                 else if (selectedObject.GetComponent<InventoryItem>().itemPosition == Position.Accessory && handAdded == true)
                 {
                     Debug.Log("ACCESSORY ALREADY TAKEN, PLEASE DROP");
@@ -128,14 +130,14 @@ public class PlayerInteract : MonoBehaviour
                     canInteract = false;
                 }
 
-                if (selectedObject.GetComponent<InventoryItem>().itemPosition == Position.Torso && torsoAdded == true)
+                else if (selectedObject.GetComponent<InventoryItem>().itemPosition == Position.Torso && torsoAdded == true)
                 {
                     Debug.Log("TORSO ALREADY TAKEN, PLEASE DROP");
                     gm.interactText.text = selectedObject.GetComponent<InventoryItem>().itemPosition.ToString() + " already taken. Please drop.";
                     canInteract = false;
                 }
 
-                if (selectedObject.GetComponent<InventoryItem>().itemPosition == Position.Pants && pantsAdded == true)
+                else if (selectedObject.GetComponent<InventoryItem>().itemPosition == Position.Pants && pantsAdded == true)
                 {
                     Debug.Log("PANTS ALREADY TAKEN, PLEASE DROP");
                     gm.interactText.text = selectedObject.GetComponent<InventoryItem>().itemPosition.ToString() + " already taken. Please drop.";
@@ -143,10 +145,7 @@ public class PlayerInteract : MonoBehaviour
                 }
                 else
                 {
-                        Debug.Log("CAN PICKUP PROP");
-                        gm.interactText.text = "Collect";
-                        gm.interactPrompt.SetActive(true);
-                        canInteract = true;
+                    CanCollect();
                 }
             }
 
@@ -167,6 +166,14 @@ public class PlayerInteract : MonoBehaviour
         gm.interactPrompt.SetActive(false);
         canInteract = false;
         selectedObject = null;
+    }
+
+    public void CanCollect()
+    {
+        Debug.Log("CAN PICKUP PROP");
+        gm.interactText.text = "Collect";
+        gm.interactPrompt.SetActive(true);
+        canInteract = true;
     }
 
 }
