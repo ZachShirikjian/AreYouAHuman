@@ -206,13 +206,13 @@ public class GameManager : MonoBehaviour
                         inventorySprites[1].SetActive(true);
                         inventorySprites[1].GetComponent<Image>().sprite = playerInventory[i].GetComponent<InventoryItem>().poseSprite;
                       break;
-                   case Position.Accessory:
-                       inventorySprites[2].SetActive(true);
-                       inventorySprites[2].GetComponent<Image>().sprite = playerInventory[i].GetComponent<InventoryItem>().poseSprite;
-                    break;
+                   //case Position.Accessory:
+                   //    inventorySprites[2].SetActive(true);
+                   //    inventorySprites[2].GetComponent<Image>().sprite = playerInventory[i].GetComponent<InventoryItem>().poseSprite;
+                   // break;
                   case Position.Pants:
-                      inventorySprites[3].SetActive(true);
-                       inventorySprites[3].GetComponent<Image>().sprite = playerInventory[i].GetComponent<InventoryItem>().poseSprite;
+                      inventorySprites[2].SetActive(true);
+                       inventorySprites[2].GetComponent<Image>().sprite = playerInventory[i].GetComponent<InventoryItem>().poseSprite;
                     break;
                   default:
                  break;
