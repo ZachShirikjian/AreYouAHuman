@@ -11,7 +11,7 @@ public class PlayerInteract : MonoBehaviour
     //List of BOOLS checking if a Prop is already on a Body Part for Zort 
     public bool headAdded = false;
     public bool torsoAdded = false;
-    public bool handAdded = false;
+   // public bool handAdded = false;
     public bool pantsAdded = false;
 
     //REFERENCES//
@@ -20,7 +20,7 @@ public class PlayerInteract : MonoBehaviour
     public InventoryUI inventoryUI; //Reference to inventoryUI script 
 
     //LIST OF ALL THE BODY PARTS PROPS CAN BE PUT ON 
-    public GameObject[] bodyParts = new GameObject[4]; 
+    public GameObject[] bodyParts = new GameObject[3]; 
 
 
     // Start is called before the first frame update
@@ -29,7 +29,7 @@ public class PlayerInteract : MonoBehaviour
         gm = GameObject.Find("GameManager").GetComponent<GameManager>();
         headAdded = false;
         torsoAdded = false;
-        handAdded = false;
+    //    handAdded = false;
         pantsAdded = false;
     }
 
@@ -76,16 +76,16 @@ public class PlayerInteract : MonoBehaviour
                 bodyParts[1].GetComponent<SpriteRenderer>().sprite = selectedObject.GetComponent<InventoryItem>().defaultSprite;
                 torsoAdded = true;
                 break;
-            case Position.Accessory:
-                Debug.Log("ACCESSORY COLLECTED");
-                bodyParts[2].GetComponent<SpriteRenderer>().enabled = true; 
-                bodyParts[2].GetComponent<SpriteRenderer>().sprite = selectedObject.GetComponent<InventoryItem>().defaultSprite;
-                handAdded = true;
-                break;
+            //case Position.Accessory:
+            //    Debug.Log("ACCESSORY COLLECTED");
+            //    bodyParts[2].GetComponent<SpriteRenderer>().enabled = true; 
+            //    bodyParts[2].GetComponent<SpriteRenderer>().sprite = selectedObject.GetComponent<InventoryItem>().defaultSprite;
+            //    handAdded = true;
+            //    break;
             case Position.Pants:
                  Debug.Log("PROP ON PANTS");
-                bodyParts[3].GetComponent<SpriteRenderer>().enabled = true; 
-                bodyParts[3].GetComponent<SpriteRenderer>().sprite = selectedObject.GetComponent<InventoryItem>().defaultSprite;
+                bodyParts[2].GetComponent<SpriteRenderer>().enabled = true; 
+                bodyParts[2].GetComponent<SpriteRenderer>().sprite = selectedObject.GetComponent<InventoryItem>().defaultSprite;
                 pantsAdded = true;
                 break;
             default:
@@ -121,21 +121,22 @@ public class PlayerInteract : MonoBehaviour
                     canInteract = false;
                 }
 
-                else if (selectedObject.GetComponent<InventoryItem>().itemPosition == Position.Accessory && handAdded == true)
-                {
-                    Debug.Log("ACCESSORY ALREADY TAKEN, PLEASE DROP");
-                    gm.interactText.text = selectedObject.GetComponent<InventoryItem>().itemPosition.ToString() + " already taken. Please drop.";
-                    canInteract = false;
-                }
+                //
+                //else if (selectedObject.GetComponent<InventoryItem>().itemPosition == Position.Accessory && handAdded == true)
+                //{
+                //    Debug.Log("ACCESSORY ALREADY TAKEN, PLEASE DROP");
+                //    gm.interactText.text = selectedObject.GetComponent<InventoryItem>().itemPosition.ToString() + " already taken. Please drop.";
+                //    canInteract = false;
+                //}
 
-                if (selectedObject.GetComponent<InventoryItem>().itemPosition == Position.Torso && torsoAdded == true)
+                else if (selectedObject.GetComponent<InventoryItem>().itemPosition == Position.Torso && torsoAdded == true)
                 {
                     Debug.Log("TORSO ALREADY TAKEN, PLEASE DROP");
                     gm.interactText.text = selectedObject.GetComponent<InventoryItem>().itemPosition.ToString() + " already taken. Please drop.";
                     canInteract = false;
                 }
 
-                if (selectedObject.GetComponent<InventoryItem>().itemPosition == Position.Pants && pantsAdded == true)
+                else if (selectedObject.GetComponent<InventoryItem>().itemPosition == Position.Pants && pantsAdded == true)
                 {
                     Debug.Log("PANTS ALREADY TAKEN, PLEASE DROP");
                     gm.interactText.text = selectedObject.GetComponent<InventoryItem>().itemPosition.ToString() + " already taken. Please drop.";
