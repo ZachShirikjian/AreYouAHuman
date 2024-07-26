@@ -7,12 +7,12 @@ public class PoseMenuButtons : MonoBehaviour
 
     //VARIABLES//
     //The index of the current scene players are on 
-    public int currentScene; 
+    public string currentScene; 
 
     //Every time a new scene is loaded, make sure the currentScene index is = to the buildIndex of the scene
     void Start()
     {
-        currentScene = SceneManager.GetActiveScene().buildIndex;
+        currentScene = SceneManager.GetActiveScene().name;
     }
     //Reloads the current level from the beginning 
     public void RestartLevel()

@@ -224,7 +224,7 @@ public class GameManager : MonoBehaviour
             }
             else if(playerInventory.Contains(correctItems[i]) == false)
             {
-                Debug.Log("WRRRRRROOOOOOOOOONNNNNGGG");
+                Debug.Log("WRONG!");
             }
         }
 
