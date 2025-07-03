@@ -13,7 +13,12 @@ public class InventorySlot : MonoBehaviour
 
     InventoryItem item; //reference to an Item from our Item class 
     public InventoryUI theUI; //reference to the UI for the Inventory
-    public GameManager gm; 
+    public GameManager gm;
+
+    private void Start()
+    {
+        gm = GameObject.Find("GameManager").GetComponent<GameManager>();
+    }
     public void AddItem(InventoryItem newItem)
     {
         item = newItem;

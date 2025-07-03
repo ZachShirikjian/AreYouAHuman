@@ -3924,7 +3924,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5509567360882178405, guid: 3a901c51de419944fbfca0606f80066b, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5702818213580323196, guid: 3a901c51de419944fbfca0606f80066b, type: 3}
       propertyPath: sfxSource

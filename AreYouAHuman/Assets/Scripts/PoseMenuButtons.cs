@@ -21,11 +21,10 @@ public class PoseMenuButtons : MonoBehaviour
     }
 
     //Continues onto the next level, if the player got the pose correct
-    //REMOVED BECAUSE OF THE LEVEL SELECT!
-    //public void NextLevel()
-    //{
-   //     SceneManager.LoadScene(currentScene + 1);
-   // }
+    public void NextLevel()
+    {
+        SceneManager.LoadScene(currentScene + 1);
+    }
 
     //Exits back to the Title Screen
     public void QuitGame()

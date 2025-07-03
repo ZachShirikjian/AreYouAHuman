@@ -20,6 +20,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/AppleFarm.unity
     guid: 7bb6a10bc99064d42a758c5aaeb5059e
+  - enabled: 1
+    path: Assets/Scenes/MedievalCastle.unity
+    guid: e7dd5de1cde7215449c07f0ca512d5e5
   - enabled: 0
     path: Assets/Scenes/Level2Test.unity
     guid: aa3391180225c473083317c144ea7432
