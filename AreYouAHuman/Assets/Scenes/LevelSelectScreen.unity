@@ -861,7 +861,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentPage: 1
-  pages: 000000000000000000000000
+  pages:
+  - {fileID: 1491595313}
+  - {fileID: 214677213}
+  - {fileID: 1442658829}
 --- !u!1 &214677213
 GameObject:
   m_ObjectHideFlags: 0
@@ -2822,7 +2825,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 665905049}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 191769383}
+        m_TargetAssemblyTypeName: LevelSelectScript, Assembly-CSharp
+        m_MethodName: DisplayNextPage
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &665905049
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3375,7 +3390,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 859073801}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 191769383}
+        m_TargetAssemblyTypeName: LevelSelectScript, Assembly-CSharp
+        m_MethodName: DisplayNextPage
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &859073801
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4352,7 +4379,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1333313860
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4535,7 +4562,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1343859334}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 191769383}
+        m_TargetAssemblyTypeName: LevelSelectScript, Assembly-CSharp
+        m_MethodName: DisplayPreviousPage
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1343859334
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5579,7 +5618,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1460586178}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 191769383}
+        m_TargetAssemblyTypeName: LevelSelectScript, Assembly-CSharp
+        m_MethodName: DisplayPreviousPage
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1460586178
 MonoBehaviour:
   m_ObjectHideFlags: 0
