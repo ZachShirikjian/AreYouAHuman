@@ -180,7 +180,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: DEVELOPMENT TEAM
+  m_text: DEVELOPERS
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 32c94ba1a14aa4775a2662ea71c76a70, type: 2}
   m_sharedMaterial: {fileID: 516067174558235671, guid: 32c94ba1a14aa4775a2662ea71c76a70, type: 2}
@@ -3657,7 +3657,7 @@ GameObject:
   - component: {fileID: 1489925039}
   - component: {fileID: 1489925038}
   m_Layer: 5
-  m_Name: TBD
+  m_Name: Level Designers
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3702,27 +3702,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Zach Shirikjian
-
-    ?
-
-    ?
-
-    ?
-
-    ?
-
-    ?
-
-    ?
-
-    ?
-
-    ?
-
-    ?
-
-    ?'
+  m_text: "Zach Shirikjian\nDavid Puello\nEvelyn Kwan\r\nOliver Malagodi\r\nAiden
+    Yung \r\nAustin Yung\r\nMarcus McFall \r\nSantiago Zambrano\r\nZane Hansen"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 71b1854d172944f34a9755df9b550842, type: 2}
   m_sharedMaterial: {fileID: 8169324763682313112, guid: 71b1854d172944f34a9755df9b550842, type: 2}
@@ -5659,7 +5640,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &2116617867
 RectTransform:
   m_ObjectHideFlags: 0

@@ -11,7 +11,6 @@ public class PlayerInteract : MonoBehaviour
     //List of BOOLS checking if a Prop is already on a Body Part for Zort 
     public bool headAdded = false;
     public bool torsoAdded = false;
-    public bool accessoryAdded = false;
     public bool handAdded = false;
     public bool pantsAdded = false;
 
@@ -21,7 +20,7 @@ public class PlayerInteract : MonoBehaviour
     public InventoryUI inventoryUI; //Reference to inventoryUI script 
 
     //LIST OF ALL THE BODY PARTS PROPS CAN BE PUT ON 
-    public GameObject[] bodyParts = new GameObject[5]; 
+    public GameObject[] bodyParts = new GameObject[4]; 
 
 
     // Start is called before the first frame update
@@ -30,7 +29,6 @@ public class PlayerInteract : MonoBehaviour
         gm = GameObject.Find("GameManager").GetComponent<GameManager>();
         headAdded = false;
         torsoAdded = false;
-        accessoryAdded = false;
         handAdded = false;
         pantsAdded = false;
     }
@@ -90,12 +88,6 @@ public class PlayerInteract : MonoBehaviour
                 bodyParts[3].GetComponent<SpriteRenderer>().sprite = selectedObject.GetComponent<InventoryItem>().defaultSprite;
                 pantsAdded = true;
                 break;
-            case Position.Hand:
-                Debug.Log("PROP ON HAND");
-                bodyParts[4].GetComponent<SpriteRenderer>().enabled = true;
-                bodyParts[4].GetComponent<SpriteRenderer>().sprite = selectedObject.GetComponent<InventoryItem>().defaultSprite;
-                accessoryAdded = true;
-                break;
             default:
             break;
         }
@@ -121,8 +113,7 @@ public class PlayerInteract : MonoBehaviour
                 //Prompt the User to remove an item from that slot in the UI.
 
                 //Check the Position of where an Item goes on the Player's body.
-                //If an item was already added to that space,
-                //Prevent the player from picking up the item.
+                //If an item was already added to that space
                 if (selectedObject.GetComponent<InventoryItem>().itemPosition == Position.Head && headAdded == true)
                 {
                     Debug.Log("HEAD ALREADY TAKEN, PLEASE DROP");
@@ -130,7 +121,6 @@ public class PlayerInteract : MonoBehaviour
                     canInteract = false;
                 }
 
-                //
                 else if (selectedObject.GetComponent<InventoryItem>().itemPosition == Position.Accessory && handAdded == true)
                 {
                     Debug.Log("ACCESSORY ALREADY TAKEN, PLEASE DROP");
@@ -151,18 +141,6 @@ public class PlayerInteract : MonoBehaviour
                     gm.interactText.text = selectedObject.GetComponent<InventoryItem>().itemPosition.ToString() + " already taken. Please drop.";
                     canInteract = false;
                 }
-
-                else if (selectedObject.GetComponent<InventoryItem>().itemPosition == Position.Hand && accessoryAdded == true)
-                {
-                    Debug.Log("HAND ALREADY TAKEN, PLEASE DROP");
-                    gm.interactText.text = selectedObject.GetComponent<InventoryItem>().itemPosition.ToString() + " already taken. Please drop.";
-                    canInteract = false;
-                }
-
-
-                //If no item has been added to that space, allow the Player to pickup that prop & add it to their inventory.
-                //Run through the else if statements until 1 of them is true. 
-                //If none of them are true, run the final else statement.
                 else
                 {
                         Debug.Log("CAN PICKUP PROP");

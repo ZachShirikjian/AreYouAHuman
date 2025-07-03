@@ -41,7 +41,6 @@ public class GameManager : MonoBehaviour
     public Sprite checkmark; //Checkmark if player passed captcha
     public Sprite xMark; //X symbol if player failed captcha
     public GameObject submitButton;
-    public GameObject continueButton; //Reference to continue button, which is only active when the player correctly got the pose right 
 
     //References the Current Scene in the game. 
     private int currentScene;
@@ -73,7 +72,6 @@ public class GameManager : MonoBehaviour
         player.SetActive(true);
         boxIcon.sprite = null;
         inventory.SetActive(true);
-        continueButton.SetActive(false);
         pauseMenu.SetActive(false);
         currentScene = SceneManager.GetActiveScene().buildIndex;
         Time.timeScale = 1f;
@@ -233,7 +231,6 @@ public class GameManager : MonoBehaviour
         //Enable the Continue button and play the CorrectPose SFX.
         if(totalItems == correctItems.Length)
         {
-                continueButton.SetActive(true);
                 sfxSource.PlayOneShot(audioManager.correctPose);
                 boxIcon.sprite = checkmark;
         }
@@ -242,7 +239,6 @@ public class GameManager : MonoBehaviour
         //Players failed the test, so they have to retry the current level.
         else if(totalItems < correctItems.Length)
         {
-                continueButton.SetActive(false);
                 boxIcon.sprite = xMark;
                 sfxSource.PlayOneShot(audioManager.wrongPose);
         }

@@ -16,7 +16,7 @@ public class TitleScreen : MonoBehaviour
         tutorialPanel.SetActive(false);
     }
 
-    //Opens up the Level Select Panel displaying all playable levels which players can choose to play from.
+    //Loads up the LevelSelectScreen to allow the Player to choose the level they want to play on.
     public void StartGame()
     {
         SceneManager.LoadScene("LevelSelectScreen");

@@ -7,12 +7,12 @@ public class PoseMenuButtons : MonoBehaviour
 
     //VARIABLES//
     //The index of the current scene players are on 
-    public string currentScene; 
+    public int currentScene; 
 
     //Every time a new scene is loaded, make sure the currentScene index is = to the buildIndex of the scene
     void Start()
     {
-        currentScene = SceneManager.GetActiveScene().name;
+        currentScene = SceneManager.GetActiveScene().buildIndex;
     }
     //Reloads the current level from the beginning 
     public void RestartLevel()
@@ -21,10 +21,11 @@ public class PoseMenuButtons : MonoBehaviour
     }
 
     //Continues onto the next level, if the player got the pose correct
-    public void NextLevel()
-    {
-        SceneManager.LoadScene(currentScene + 1);
-    }
+    //REMOVED BECAUSE OF THE LEVEL SELECT!
+    //public void NextLevel()
+    //{
+   //     SceneManager.LoadScene(currentScene + 1);
+   // }
 
     //Exits back to the Title Screen
     public void QuitGame()

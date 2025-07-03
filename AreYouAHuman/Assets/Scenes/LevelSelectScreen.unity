@@ -180,7 +180,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: BURGEY'S
+  m_text: COMING SOON!
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 2964bdc6b973047e19a9421af4d229b3, type: 2}
   m_sharedMaterial: {fileID: 3882437579797245757, guid: 2964bdc6b973047e19a9421af4d229b3, type: 2}
@@ -393,7 +393,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Created by Zane
+  m_text: Created by Zane Hansen
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 32c94ba1a14aa4775a2662ea71c76a70, type: 2}
   m_sharedMaterial: {fileID: 516067174558235671, guid: 32c94ba1a14aa4775a2662ea71c76a70, type: 2}
@@ -527,7 +527,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Created by Santiago
+  m_text: 'Created by Santiago Zambrano
 
 '
   m_isRightToLeft: 0
@@ -860,6 +860,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 94919acee353a294da5c38a1487d4d02, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentPage: 1
+  pages: 000000000000000000000000
 --- !u!1 &214677213
 GameObject:
   m_ObjectHideFlags: 0
@@ -872,12 +874,12 @@ GameObject:
   - component: {fileID: 214677216}
   - component: {fileID: 214677215}
   m_Layer: 5
-  m_Name: Page2
+  m_Name: Page 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &214677214
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1356,7 +1358,7 @@ GameObject:
   - component: {fileID: 451962729}
   - component: {fileID: 451962728}
   m_Layer: 5
-  m_Name: PoliceStationButton
+  m_Name: ComingSoon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1447,7 +1449,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 61a2e2586eb64884094f49e02886096b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: eb877b6ebc7e57449a62150f32b62ed3, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -2270,7 +2272,7 @@ GameObject:
   - component: {fileID: 561493268}
   - component: {fileID: 561493267}
   m_Layer: 5
-  m_Name: Burgeys
+  m_Name: ComingSoon2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2361,7 +2363,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 59dc56fdf0f55b74fae209ccd04790a6, type: 3}
+  m_Sprite: {fileID: 21300000, guid: eb877b6ebc7e57449a62150f32b62ed3, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -2916,7 +2918,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Created by Austin Yung
+  m_text: Created by ???
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 32c94ba1a14aa4775a2662ea71c76a70, type: 2}
   m_sharedMaterial: {fileID: 516067174558235671, guid: 32c94ba1a14aa4775a2662ea71c76a70, type: 2}
@@ -3241,7 +3243,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 812647906}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 191769383}
+        m_TargetAssemblyTypeName: LevelSelectScript, Assembly-CSharp
+        m_MethodName: ReturnToTitle
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &812647906
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3579,7 +3593,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Created by Oliver M
+  m_text: Created by Oliver Malagodi
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 32c94ba1a14aa4775a2662ea71c76a70, type: 2}
   m_sharedMaterial: {fileID: 516067174558235671, guid: 32c94ba1a14aa4775a2662ea71c76a70, type: 2}
@@ -5281,12 +5295,12 @@ GameObject:
   - component: {fileID: 1442658832}
   - component: {fileID: 1442658831}
   m_Layer: 5
-  m_Name: Page3
+  m_Name: Page 3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1442658830
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5616,7 +5630,7 @@ GameObject:
   - component: {fileID: 1491595316}
   - component: {fileID: 1491595315}
   m_Layer: 5
-  m_Name: Page1
+  m_Name: Page 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6010,7 +6024,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Created by Marcus McFall
+  m_text: Created by ???
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 32c94ba1a14aa4775a2662ea71c76a70, type: 2}
   m_sharedMaterial: {fileID: 516067174558235671, guid: 32c94ba1a14aa4775a2662ea71c76a70, type: 2}
@@ -6694,7 +6708,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: POLICE STATION
+  m_text: COMING SOON!
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 2964bdc6b973047e19a9421af4d229b3, type: 2}
   m_sharedMaterial: {fileID: 3882437579797245757, guid: 2964bdc6b973047e19a9421af4d229b3, type: 2}
