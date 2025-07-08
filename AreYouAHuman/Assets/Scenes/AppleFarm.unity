@@ -2645,6 +2645,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: 4ItemCanvas
       objectReference: {fileID: 0}
+    - target: {fileID: 2735014593966460594, guid: 86dde179514857b4581f7a3c4087d93e, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2784678029539118763, guid: 86dde179514857b4581f7a3c4087d93e, type: 3}
       propertyPath: sfxSource
       value: 
