@@ -1,5 +1,80 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &6175067059458470301
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1303534481854635933}
+  - component: {fileID: 3128691916711130193}
+  - component: {fileID: 7612177619978788456}
+  m_Layer: 5
+  m_Name: Hand
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!224 &1303534481854635933
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6175067059458470301}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 0}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2917273960659034457}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 161, y: -188}
+  m_SizeDelta: {x: 200, y: 200}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!222 &3128691916711130193
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6175067059458470301}
+  m_CullTransparentMesh: 1
+--- !u!114 &7612177619978788456
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6175067059458470301}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: 5dbc6dc90c7e85f4fa6fde0a8866df6b, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 1
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
 --- !u!1001 &7072108374994871859
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10,7 +85,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2735014593966460594, guid: 86dde179514857b4581f7a3c4087d93e, type: 3}
       propertyPath: m_Name
-      value: 4ItemCanvas Variant Variant
+      value: 5ItemCanvas
       objectReference: {fileID: 0}
     - target: {fileID: 7726219047507109673, guid: 86dde179514857b4581f7a3c4087d93e, type: 3}
       propertyPath: m_Pivot.x
@@ -94,6 +169,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 5357331017348040554, guid: 86dde179514857b4581f7a3c4087d93e, type: 3}
+      insertIndex: 2
+      addedObject: {fileID: 1303534481854635933}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 86dde179514857b4581f7a3c4087d93e, type: 3}
+--- !u!224 &2917273960659034457 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 5357331017348040554, guid: 86dde179514857b4581f7a3c4087d93e, type: 3}
+  m_PrefabInstance: {fileID: 7072108374994871859}
+  m_PrefabAsset: {fileID: 0}
