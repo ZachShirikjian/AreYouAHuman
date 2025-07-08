@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 //Script partially taken from INVENTORY CODE - Making an RPG in Unity (Ep 6) by Brackeys
@@ -24,7 +25,7 @@ public class InventoryUI : MonoBehaviour
         player = GameObject.FindWithTag("Player");
         playerInteractScript = player.GetComponent<PlayerInteract>();
         slots = slotList.GetComponentsInChildren<InventorySlot>();
-        for(int i = 0; i < slots.Length; i++)
+        for (int i = 0; i < slots.Length; i++)
         {
             Debug.Log("CLEARED ALL SLOTS");
             slots[i].ClearSlot();
@@ -39,7 +40,7 @@ public class InventoryUI : MonoBehaviour
             inventoryItems[i].alreadyAdded = true;
             sfxSource.PlayOneShot(audioManager.collectItem);
         }
-        if(gm.playerInventory.Count == gm.maxInventoryItems)
+        if (gm.playerInventory.Count == gm.maxInventoryItems)
         {
             gm.submitButton.SetActive(true);
         }
@@ -61,7 +62,7 @@ public class InventoryUI : MonoBehaviour
         //             slots[i].AddItem(item);
         //             // inventoryItems[i].alreadyAdded = true;
         //         }
-    
+
         //             // if(inventoryItems[i].alreadyAdded == false)
         //             // {
         //             //     Debug.Log("CAN ADD ITEM");
@@ -72,7 +73,7 @@ public class InventoryUI : MonoBehaviour
         //         item.alreadyAdded = true;
         // }
 
-        }
+    }
 
     //Removes an item from the inventory when the button is clicked.
     public void RemoveItem(InventoryItem item)
@@ -81,39 +82,82 @@ public class InventoryUI : MonoBehaviour
         // inventoryItems[i].alreadyAdded = false;
         inventoryItems.Remove(item);
         sfxSource.PlayOneShot(audioManager.dropItem);
-        if(gm.playerInventory.Count > 0)
+        if (gm.playerInventory.Count > 0)
         {
             Debug.Log("REMOVAL SUCCESSFUL");
             item.gameObject.SetActive(true);
             item.gameObject.transform.position = player.transform.position;
-            switch(item.itemPosition)
+
+            //If InventorySprites is 5 (Hand & Accessory), 
+            //Allow Hand Sprite to Be Dropped
+
+            //If InventorySprites is 4 (Default, Head, Accessory, Torso, Pants
+            if (gm.inventorySprites.Length == 4)
             {
-                case Position.Head:
-                    playerInteractScript.bodyParts[0].GetComponent<SpriteRenderer>().enabled = true; 
-                     playerInteractScript.bodyParts[0].GetComponent<SpriteRenderer>().sprite = null;
-                     playerInteractScript.headAdded = false;
-                break;
-                case Position.Torso:
-                     playerInteractScript.bodyParts[1].GetComponent<SpriteRenderer>().enabled = true; 
-                     playerInteractScript.bodyParts[1].GetComponent<SpriteRenderer>().sprite = null;
-                     playerInteractScript.torsoAdded = false;
-                break;
-                case Position.Accessory:
-                     playerInteractScript.bodyParts[2].GetComponent<SpriteRenderer>().enabled = true; 
-                     playerInteractScript.bodyParts[2].GetComponent<SpriteRenderer>().sprite = null;
-                     playerInteractScript.handAdded = false;
-                break;
-                case Position.Pants:
-                     playerInteractScript.bodyParts[3].GetComponent<SpriteRenderer>().enabled = true; 
-                     playerInteractScript.bodyParts[3].GetComponent<SpriteRenderer>().sprite = null;
-                     playerInteractScript.pantsAdded = false;   
-                break;
-                default:
-                break;
+                switch (item.itemPosition)
+                {
+                    case Position.Head:
+                        playerInteractScript.bodyParts[0].GetComponent<SpriteRenderer>().enabled = true;
+                        playerInteractScript.bodyParts[0].GetComponent<SpriteRenderer>().sprite = null;
+                        playerInteractScript.headAdded = false;
+                        break;
+                    case Position.Torso:
+                        playerInteractScript.bodyParts[1].GetComponent<SpriteRenderer>().enabled = true;
+                        playerInteractScript.bodyParts[1].GetComponent<SpriteRenderer>().sprite = null;
+                        playerInteractScript.torsoAdded = false;
+                        break;
+                    case Position.Accessory:
+                        playerInteractScript.bodyParts[2].GetComponent<SpriteRenderer>().enabled = true;
+                        playerInteractScript.bodyParts[2].GetComponent<SpriteRenderer>().sprite = null;
+                        playerInteractScript.handAdded = false;
+                        break;
+                    case Position.Pants:
+                        playerInteractScript.bodyParts[3].GetComponent<SpriteRenderer>().enabled = true;
+                        playerInteractScript.bodyParts[3].GetComponent<SpriteRenderer>().sprite = null;
+                        playerInteractScript.pantsAdded = false;
+                        break;
+                    default:
+                        break;
+                }
             }
-            // Destroy(item.gameObject);
-            gm.playerInventory.Remove(item.gameObject);
-            gm.itemsCollected--;
+            else if (gm.inventorySprites.Length == 5)
+            {
+                switch (item.itemPosition)
+                {
+                    case Position.Head:
+                        playerInteractScript.bodyParts[0].GetComponent<SpriteRenderer>().enabled = true;
+                        playerInteractScript.bodyParts[0].GetComponent<SpriteRenderer>().sprite = null;
+                        playerInteractScript.headAdded = false;
+                        break;
+                    case Position.Torso:
+                        playerInteractScript.bodyParts[1].GetComponent<SpriteRenderer>().enabled = true;
+                        playerInteractScript.bodyParts[1].GetComponent<SpriteRenderer>().sprite = null;
+                        playerInteractScript.torsoAdded = false;
+                        break;
+                    case Position.Accessory:
+                        playerInteractScript.bodyParts[2].GetComponent<SpriteRenderer>().enabled = true;
+                        playerInteractScript.bodyParts[2].GetComponent<SpriteRenderer>().sprite = null;
+                        playerInteractScript.handAdded = false;
+                        break;
+
+                    case Position.Hand:
+                        playerInteractScript.bodyParts[3].GetComponent<SpriteRenderer>().enabled = true;
+                        playerInteractScript.bodyParts[3].GetComponent<SpriteRenderer>().sprite = null;
+                        playerInteractScript.handAdded = false;
+                        break;
+
+                    case Position.Pants:
+                        playerInteractScript.bodyParts[4].GetComponent<SpriteRenderer>().enabled = true;
+                        playerInteractScript.bodyParts[4].GetComponent<SpriteRenderer>().sprite = null;
+                        playerInteractScript.pantsAdded = false;
+                        break;
+                    default:
+                        break;
+                }
+            }
+                // Destroy(item.gameObject);
+                gm.playerInventory.Remove(item.gameObject);
+                gm.itemsCollected--;
+            }
         }
     }
-}

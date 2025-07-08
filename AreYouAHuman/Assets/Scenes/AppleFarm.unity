@@ -2402,7 +2402,7 @@ PrefabInstance:
     - target: {fileID: 3010251645253817730, guid: fbae7ddae6ecde740abec620e7c5cc37, type: 3}
       propertyPath: inventoryUI
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 3035696423863722001}
     - target: {fileID: 3647860337655075691, guid: fbae7ddae6ecde740abec620e7c5cc37, type: 3}
       propertyPath: m_LocalPosition.y
       value: 3
@@ -2651,6 +2651,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6824697569939662216, guid: 86dde179514857b4581f7a3c4087d93e, type: 3}
+      propertyPath: currentScene
+      value: AppleFarm
+      objectReference: {fileID: 0}
     - target: {fileID: 6849541803514258808, guid: 86dde179514857b4581f7a3c4087d93e, type: 3}
       propertyPath: gm
       value: 
@@ -2740,6 +2744,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 86dde179514857b4581f7a3c4087d93e, type: 3}
+--- !u!114 &3035696423863722001 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2784678029539118763, guid: 86dde179514857b4581f7a3c4087d93e, type: 3}
+  m_PrefabInstance: {fileID: 3035696423863722000}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2e2e2a4b06e544873ad5592787d2e554, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &3238662559103164225
 PrefabInstance:
   m_ObjectHideFlags: 0

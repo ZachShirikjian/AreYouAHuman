@@ -16,11 +16,10 @@ public class TitleScreen : MonoBehaviour
         tutorialPanel.SetActive(false);
     }
 
-    //Loads up the Level1 scene when the StartButton is pressed.
-    //To load a different scene, replace "Level1" with the name of your scene inside the quotes. (eg "ZachScene")
+    //Loads up the LevelSelectScreen scene when the StartButton is pressed.
     public void StartGame()
     {
-        SceneManager.LoadScene("Level1");
+        SceneManager.LoadScene("LevelSelectScreen");
     }
 
     //Opens the CreditsPanel in the TitleScreen

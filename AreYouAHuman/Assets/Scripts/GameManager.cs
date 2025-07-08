@@ -58,7 +58,6 @@ public class GameManager : MonoBehaviour
         submitButton.SetActive(false);
         paused = false;
         itemsCollected = 0;
-        // timer = 60;
         minutes = Mathf.Floor(timer / 60);
         seconds = timer - minutes * 60;
         timerText.text = minutes.ToString() + ":0" + seconds.ToString();
@@ -198,19 +197,19 @@ public class GameManager : MonoBehaviour
                {
                    case Position.Head:
                        inventorySprites[0].SetActive(true);
-                       inventorySprites[0].GetComponent<Image>().sprite = playerInventory[i].GetComponent<InventoryItem>().poseSprite;
+                       inventorySprites[0].GetComponent<Image>().sprite = playerInventory[i].GetComponent<InventoryItem>().defaultSprite;
                        break;
                    case Position.Torso:
                         inventorySprites[1].SetActive(true);
-                        inventorySprites[1].GetComponent<Image>().sprite = playerInventory[i].GetComponent<InventoryItem>().poseSprite;
+                        inventorySprites[1].GetComponent<Image>().sprite = playerInventory[i].GetComponent<InventoryItem>().defaultSprite;
                       break;
                    case Position.Accessory:
                        inventorySprites[2].SetActive(true);
-                       inventorySprites[2].GetComponent<Image>().sprite = playerInventory[i].GetComponent<InventoryItem>().poseSprite;
+                       inventorySprites[2].GetComponent<Image>().sprite = playerInventory[i].GetComponent<InventoryItem>().defaultSprite;
                     break;
                   case Position.Pants:
                       inventorySprites[3].SetActive(true);
-                       inventorySprites[3].GetComponent<Image>().sprite = playerInventory[i].GetComponent<InventoryItem>().poseSprite;
+                       inventorySprites[3].GetComponent<Image>().sprite = playerInventory[i].GetComponent<InventoryItem>().defaultSprite;
                     break;
                   default:
                  break;
@@ -222,7 +221,7 @@ public class GameManager : MonoBehaviour
             }
             else if(playerInventory.Contains(correctItems[i]) == false)
             {
-                Debug.Log("WRRRRRROOOOOOOOOONNNNNGGG");
+                Debug.Log("WRONG!");
             }
         }
 

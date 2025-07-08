@@ -1784,6 +1784,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6824697569939662216, guid: 86dde179514857b4581f7a3c4087d93e, type: 3}
+      propertyPath: currentScene
+      value: MedievalCastle
+      objectReference: {fileID: 0}
     - target: {fileID: 6849541803514258808, guid: 86dde179514857b4581f7a3c4087d93e, type: 3}
       propertyPath: gm
       value: 
