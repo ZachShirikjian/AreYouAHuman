@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 7238666997016553963}
   - component: {fileID: 9145439098011262413}
   m_Layer: 0
-  m_Name: MaskPickup
+  m_Name: HeadProp
   m_TagString: Prop
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
