@@ -6,7 +6,7 @@ public class PoseMenuButtons : MonoBehaviour
 {
 
     //VARIABLES//
-    //The index of the current scene players are on 
+    //The name of the current Scene (or level) a player is on.
     public string currentScene; 
 
     //Every time a new scene is loaded, make sure the currentScene is the Scene's name.
