@@ -6,7 +6,7 @@ public class PlayerMovement : MonoBehaviour
 {
     //VARIABLES//
     private float movement;
-    private float speed = 5f;
+    private float speed = 10f;
     private float jumpPower = 30f;
     private bool IsFacingRight = true;
 

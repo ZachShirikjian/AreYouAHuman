@@ -8,7 +8,7 @@ public class GameManager : MonoBehaviour
 {
     //VARIABLES//
     public bool timerRunning = true; //set to false if player submits their props before timer runs out
-    public int timer = 60;    //The # of time (in seconds) a level is.
+    public int timer = 360;    //The # of time (in seconds) a level is.
     private float minutes;
     private float seconds; 
     public GameObject interactPrompt;
